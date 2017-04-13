@@ -1,63 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    {#Title сторінки, унікальний для кожної#}
 	<title>{% block title %}{% endblock %}</title>
-
 	<meta charset="utf-8" />
-
 	{% load staticfiles %}
+    <script src="{% static 'catalogue/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'catalogue/js/jquery-3.1.1.min.js' %}"></script>
+    <script src="{% static 'catalogue/js/script.js' %}"></script>
+	<link rel="stylesheet" href="{% static 'catalogue/css/style.css' %}" type = "text/css"/>
 	<link rel="stylesheet" href="{% static 'catalogue/css/bootstrap.min.css' %}" type = "text/css"/>
 	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
-
-    {#Для динаміки footer#}
-	<style type="text/css">
-		html,
-		body {
-		  height:100%
-		}
-	</style>
 </head>
-
 <body class="body" style="background-color:#f6f6f6">
-
-    {#Блок header, тут повинен бути nav#}
+    <div class="container-fluid">
 	{% block header %}
     {% endblock %}
-
-
-
 		<div class="row">
-            <div class="col-sm-2">
-                <br><br>
-                <!-- Great, til you resize. -->
-                <!--<div class="well bs-sidebar affix" id="sidebar" style="background-color:#fff">-->
-                <div class="well bs-sidebar" id="sidebar" style="background-color:#fff">
-                    <ul class="nav nav-pills nav-stacked">
-                        <li><a href='/'>Home</a></li>
-                        <li><a href='#'>Blog</a></li>
-                        <li><a href='#'>Contact</a></li>
-                    </ul>
-                </div> <!--well bs-sidebar affix-->
-            </div> <!--col-sm-2-->
-            <div class="col-sm-10">
-                <div class='container-fluid'>
-                    <br><br>
-
-                    {# Контент сторінки#}
-                    {% block content %}
-
-                    {% endblock %}
-
-                </div>
-            </div>
+		  <div class="col-sm-2">
+		  <br> <br>
+			<div class="well bs-sidebar" id="style" style="background-color:#fff">
+			  <ul class="nav nav-pills nav-stacked">
+                  <li><a href="#" onclick="showcontent('#money-type')">Тип купюри</a></li>
+                  <div id="money-type">
+                      <ul class="nav nav-pills nav-stacked">
+                          <li><a href="">
+                              <input type="radio" class="radio" id='radio-1' name="radio" value="UAH"/><label for="radio-1">Гривня
+                          </label></a></li>
+                          <li><a href="">
+                              <input type="radio" class="radio" id='radio-2' name="radio" value="car"/><label for="radio-2">Карбованець
+                          </label></a></li>
+                      </ul>
+                  </div>
+                  <li><a href="#" onclick="showcontent('#denomination')">Номінал</a></li>
+                  <div id="denomination">
+                      <ul class="nav nav-pills nav-stacked">
+                          <li><a href="#">
+                              <input type="range" min="1" max="1000000" step="10">
+                          </a></li>
+                      </ul>
+                  </div>
+                  <li><a href="">Роки випуску</a></li>
+			  </ul>
+			</div>
+          </div>
+		  <div class="col-sm-10">
+			<div class='container-fluid'>
+			<br><br>
+			   {% block content %}
+			   {% endblock %}
+			</div>
+		  </div>
+        {% block footer %}
+        {% endblock %}
         </div>
-
-{# Блок footer #}
-{% block footer %}
-{% endblock %}
-
+    </div>
 </body>
-
 </html>
