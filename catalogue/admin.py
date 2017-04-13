@@ -1,3 +1,5 @@
 from django.contrib import admin
 
-# Register your models here.
+from catalogue.models import Bancnote
+
+admin.site.register(Bancnote)

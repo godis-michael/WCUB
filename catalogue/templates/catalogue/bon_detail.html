@@ -1,0 +1,17 @@
+{% extends 'catalogue/base.html' %}
+{% block title %}Каталог{% endblock %}
+
+{% include  'catalogue/includes/header.html'%}
+
+{% block content %}
+    <img src="{{ bancnote.image.url }}"/>
+    <ul>
+        <li>{{ bancnote.par }} {{ bancnote.type }}</li>
+        <li>{{ bancnote.desc }}</li>
+        <li>{{ bancnote.year_from }} - {{ bancnote.year_to }}</li>
+        <li>{{ bancnote.size }}</li>
+        <li>{{ bancnote.sign }}</li>
+    </ul>
+{% endblock %}
+
+{% include 'catalogue/includes/footer.html' %}

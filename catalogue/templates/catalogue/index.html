@@ -4,7 +4,26 @@
 {% include  'catalogue/includes/header.html'%}
 
 {% block content %}
-    <h1>Hello</h1>
+    {% if bons %}
+        <div class="container-fluid">
+            <div class="row">
+                {% for bon in bons %}
+                    {% if forloop.counter|divisibleby:"5" %}
+            </div>
+                        <div class="row">
+                    {% endif %}
+                    <div class="col-sm-3 col-lg-3">
+                        <div style="display: block; text-align: center; margin: 0 auto">
+                            <a href="{{ bon.id }}">
+                                <img src="{{ bon.image.url }}" style="width: 50%; height: 50%"/>
+                                <h5>{{ bon.par }} {{ bon.type }} {{ bon.year_from}}-{{ bon.year_to }}</h5>
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
+                        </div>
+        </div>
+    {% endif %}
 {% endblock %}
 
 {% include 'catalogue/includes/footer.html' %}
