@@ -8,7 +8,7 @@ class Bancnote(models.Model):
 
     type = models.CharField(max_length=11, default='Гривень')
     par = models.PositiveIntegerField(validators=[MinValueValidator(1, validators_errors['par_length']),
-                                                  MaxValueValidator(2017, validators_errors['par_length'])])
+                                                  MaxValueValidator(1000000, validators_errors['par_length'])])
     year_from = models.PositiveIntegerField(validators=[MinValueValidator(1917, validators_errors['year_length']),
                                                         MaxValueValidator(2017, validators_errors['year_length'])])
     year_to = models.PositiveIntegerField(validators=[MinValueValidator(1917, validators_errors['year_length']),
