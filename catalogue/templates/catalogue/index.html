@@ -8,7 +8,7 @@
         <div class="container-fluid">
             <div class="row">
                 {% for bon in bons %}
-                    {% if forloop.counter|divisibleby:"5" %}
+                    {% if forloop.counter0|divisibleby:"4" %}
             </div>
                         <div class="row">
                     {% endif %}
@@ -23,6 +23,30 @@
                 {% endfor %}
                         </div>
         </div>
+
+        {% if bons.has_other_pages %}
+            <div style="position: relative; left: 38%;">
+                <ul class="pagination">
+                {% if bons.has_previous %}
+                    <li><a href="?page={{ bons.previous_page_number }}">&laquo;</a></li>
+                {% else %}
+                    <li class="disabled"><span>&laquo;</span></li>
+                {% endif %}
+                {% for i in page_range %}
+                    {% if bons.number == i %}
+                        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                    {% else %}
+                        <li><a href="?page={{ i }}">{{ i }}</a></li>
+                    {% endif %}
+                {% endfor %}
+                {% if bons.has_next %}
+                    <li><a href="?page={{ bons.next_page_number }}">&raquo;</a></li>
+                {% else %}
+                    <li class="disabled"><span>&raquo;</span></li>
+                {% endif %}
+                </ul>
+            </div>
+        {% endif %}
     {% endif %}
 {% endblock %}
 
