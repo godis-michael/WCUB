@@ -1,4 +1,34 @@
 /*html, body {height: 100%;}*/
+/*        my              */
+#firstPer,#secPer{
+    width: 32%;
+    text-align: center;
+}
+.range-input{
+    padding-top: 2%;
+    padding-left: 7%;
+}
+#par{
+    padding: 2% 0 2% 0;
+}
+select,input[type="text"]{
+    border: 1px solid #d6d6d6;
+    border-radius: 3px;
+}
+/*bootstrap classes*/
+.btn.btn-default{
+    padding: 3px 5px;
+}
+label{
+    font-weight: 500 !important;
+}
+.well{
+    padding: 10px !important;
+}
+.nav>li>a {
+    padding: 5px 10px!important;
+}
+/*        radio           */
 .radio {
   vertical-align: top;
   width: 17px;
@@ -45,14 +75,91 @@
 .radio:focus + label:before {
   box-shadow: 0 0 0 3px rgba(255,255,0,.5);
 }
-/*bootstrap classes*/
-label{
-    font-weight: 500 !important;
+/*        slider           */
+div.range-slider {
+  position: relative;
+  width: 100%;
+  height: 5vh;
+  float: left;
+  text-align: center;
 }
-.well{
-    padding: 10px !important;
+div.range-slider input[type="range"] {
+  pointer-events: none;
+  position: absolute;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  border: none;
+  border-radius: 14px;
+  background: #269cc9;
+  box-shadow: inset 0 1px 0 0 #cdc6c6, inset 0 -1px 0 0 #d9d4d4;
+  -webkit-box-shadow: inset 0 1px 0 0 #cdc6c6, inset 0 -1px 0 0 #d9d4d4;
+  /*overflow: hidden;*/
+  left: 0;
+  top: 15px;
+  width: 100%;
+  outline: none;
+  height: 5px;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
 }
-.nav>li>a {
-    padding: 5px 10px!important;
+div.range-slider input[type="range"]::-webkit-slider-thumb {
+    pointer-events: all;
+    position: relative;
+    z-index: 1;
+    outline: 0;
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border: none;
+    border-radius: 50%;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dad8da), color-stop(100%, #413F41));
+    /* android <= 2.2 */
+    background-image: -webkit-linear-gradient(top, #dad8da 0, #413F41 100%);
+    /* older mobile safari and android > 2.2 */
+    background-image: linear-gradient(to bottom, #da0006 0, #7b797b 100%);
+    /* W3C */
 }
-/*                 */
+div.range-slider input[type="range"]::-moz-range-thumb {
+  pointer-events: all;
+  position: relative;
+  z-index: 10;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 14px;
+  background-image: linear-gradient(to bottom, #ffffff 0, #ff1700 100%);
+  /* W3C */
+}
+div.range-slider input[type="range"]::-ms-thumb {
+  pointer-events: all;
+  position: relative;
+  z-index: 10;
+  -ms-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 14px;
+  border: 0;
+  background-image: linear-gradient(to bottom, #dad8da 0, #413F41 100%);
+  /* W3C */
+}
+div.range-slider input[type=range]::-moz-range-track {
+  position: relative;
+  z-index: -1;
+  background-color: black;
+  border: 0;
+}
+div.range-slider input[type=range]:last-of-type::-moz-range-track {
+  -moz-appearance: none;
+  background: none transparent;
+  border: 0;
+}
+div.range-slider input[type=range]::-moz-focus-outer {
+  border: 0;
+}
+/*        slider           */
+.rangeValues{
+    padding-left: 10px;
+}
+/*                         */
