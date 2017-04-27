@@ -6,20 +6,24 @@
 	{% load staticfiles %}
 	<link rel="stylesheet" href="{% static 'catalogue/css/style.css' %}" type = "text/css"/>
 	<link rel="stylesheet" href="{% static 'catalogue/css/bootstrap.min.css' %}" type = "text/css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <script src="{% static 'catalogue/js/jquery-3.1.1.js' %}"></script>
     <script src="{% static 'catalogue/js/bootstrap.js' %}"></script>
     <script src="{% static 'catalogue/js/script.js' %}"></script>
 	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
 </head>
-<body class="body" style="background-color:#f6f6f6">
-    <div class="container-fluid">
+<body class="body">
 	{% include 'catalogue/includes/header.html' %}
+    <div class="container-fluid">
 		<div class="row">
 		  <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
 		  <br> <br>
 			<div class="well bs-sidebar" id="style" style="background-color:#fff">
 			  <ul class="nav nav-pills nav-stacked">
-                  <li><a href="#" onclick="showcontent('#money-type')">Тип купюри</a></li>
+                  <li>
+                      <a href="#" class="toggle-menu" onclick="showcontent('#money-type')">Тип купюри
+                          <i class="fa fa-chevron-up"></i></a>
+                  </li>
                   <div id="money-type">
                       <ul class="nav nav-pills nav-stacked">
                           <li><a href="#">
@@ -30,15 +34,16 @@
                           </label></a></li>
                       </ul>
                   </div>
-                  <li><a href="#" onclick="showcontent('#par')">Номінал</a></li>
+                  <li><a href="#" class="toggle-menu" onclick="showcontent('#par')">Номінал
+                      <i class="fa fa-chevron-up"></i></a></li>
                   <div id="par">
                       <select name="from" id="from">
                       </select>
-                      -
                       <select name="from" id="to">
                       </select>
                   </div>
-                  <li><a href="#" onclick="showcontent('#period')">Роки випуску</a></li>
+                  <li><a href="#" class="toggle-menu" onclick="showcontent('#period')">Роки випуску
+                      <i class="fa fa-chevron-up"></i></a></li>
                   <div id="period">
                       <div class="range-input">
                           <input type="text" id="firstPer"maxlength="4"> -
@@ -54,15 +59,14 @@
 			</div>
           </div>
 		  <div class="col-lg-10 col-md-9 col-sm-9 col-xs-12 ">
-			<div class='container-fluid'>
+{#			<div class='container-fluid'>#}
 			<br><br>
 			   {% block content %}
 			   {% endblock %}
-			</div>
+{#			</div>#}
 		  </div>
-        {% include 'catalogue/includes/footer.html' %}
         </div>
     </div>
-
 </body>
+{% include 'catalogue/includes/footer.html' %}
 </html>

@@ -1,7 +1,6 @@
 $(document).ready(function () {
   var temp, denomination = [1,2,3,5,10,20,25,50,100,200,500,1000,2000,5000,10000,20000,
       50000,100000,200000,500000,100000,200000,500000,1000000,2000000];
-
   for(var i = 0; i < denomination.length; i++){
       temp = document.createElement('option');
       $(temp).attr('value', denomination[i]).html(denomination[i]);
@@ -20,7 +19,15 @@ $(document).ready(function () {
           $('#to').val($('#from').val());
           $('#from').val(temp);
       }
-  })
+  });
+
+  $('.toggle-menu').click(function () {
+      console.log(this.lastChild);
+      if($(this.lastChild).hasClass('fa-chevron-up')){
+          $(this.lastChild).removeClass('fa-chevron-up').addClass('fa-chevron-down');
+      } else $(this.lastChild).removeClass('fa-chevron-down').addClass('fa-chevron-up');
+  });
+
 });
 
 function showcontent(id) {

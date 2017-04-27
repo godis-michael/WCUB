@@ -1,5 +1,9 @@
-/*html, body {height: 100%;}*/
+html, body {height: 100% !important;}
 /*        my              */
+/** {
+  margin: 0;
+  padding: 0;
+}*/
 #firstPer,#secPer{
     width: 32%;
     text-align: center;
@@ -15,9 +19,43 @@ select,input[type="text"]{
     border: 1px solid #d6d6d6;
     border-radius: 3px;
 }
+footer{
+    position: relative; /* Фиксированное положение */
+    left: 0; bottom: 0; /* Левый нижний угол */
+    padding: 10px; /* Поля вокруг текста */
+    background: #39b54a; /* Цвет фона */
+    color: #fff; /* Цвет текста */
+    width: 100%; /* Ширина слоя */
+}
+.fa{
+    position: absolute;
+    top: calc(1.2vh);
+    right: calc(0.1vw);
+}
+/*       navbar      */
+.navbar-default {
+  background-color: #DC404A !important;
+}
+
+.navbar-default .navbar-nav > li > a{
+  color: #fff !important;
+  font-weight: bold !important;
+  font-size: 16px !important;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-brand:hover {
+  color: #fff !important;
+  background-color: #c0392b !important;
+}
+
+.navbar-default .navbar-brand {
+  color: #fff !important;
+  font-weight: bold;
+}
 /*bootstrap classes*/
 .btn.btn-default{
-    padding: 3px 5px;
+    padding: 3px 5px !important;
 }
 label{
     font-weight: 500 !important;
@@ -25,7 +63,7 @@ label{
 .well{
     padding: 10px !important;
 }
-.nav>li>a {
+.nav.nav-pills.nav-stacked>li>a {
     padding: 5px 10px!important;
 }
 /*        radio           */
