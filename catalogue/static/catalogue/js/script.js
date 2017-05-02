@@ -22,12 +22,19 @@ $(document).ready(function () {
   });
 
   $('.toggle-menu').click(function () {
-      console.log(this.lastChild);
       if($(this.lastChild).hasClass('fa-chevron-up')){
           $(this.lastChild).removeClass('fa-chevron-up').addClass('fa-chevron-down');
       } else $(this.lastChild).removeClass('fa-chevron-down').addClass('fa-chevron-up');
   });
 
+  var body = document.body,
+      html = document.documentElement,
+      height = Math.max( body.scrollHeight, body.offsetHeight,
+          html.clientHeight, html.scrollHeight, html.offsetHeight );
+  console.log(height);
+  if(height <= html.clientHeight){
+      $('footer').css('position', 'absolute');
+    } else $('footer').css('position', 'relative');
 });
 
 function showcontent(id) {

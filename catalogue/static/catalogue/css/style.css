@@ -23,14 +23,30 @@ footer{
     position: relative; /* Фиксированное положение */
     left: 0; bottom: 0; /* Левый нижний угол */
     padding: 10px; /* Поля вокруг текста */
-    background: #39b54a; /* Цвет фона */
-    color: #fff; /* Цвет текста */
+    background: #333333; /* Цвет фона */
+    color: #d6d6d6; /* Цвет текста */
     width: 100%; /* Ширина слоя */
 }
-.fa{
-    position: absolute;
-    top: calc(1.2vh);
-    right: calc(0.1vw);
+.chev{
+    position: absolute !important;
+    top: calc(1.2vh) !important;
+    right: calc(0.1vw) !important;
+}
+#range-ok{
+    padding: 3px 5px !important;
+}
+#text-email{
+    margin: 5px 0;
+    font-size: 24px;
+}
+h4{
+    text-transform: uppercase;
+}
+.contacts.fa{
+    color:#f84c48
+}
+.contacts.fa-envelope{
+    font-size: 11px;
 }
 /*       navbar      */
 .navbar-default {
@@ -51,12 +67,9 @@ footer{
 
 .navbar-default .navbar-brand {
   color: #fff !important;
-  font-weight: bold;
+  font-weight: bold !important;
 }
 /*bootstrap classes*/
-.btn.btn-default{
-    padding: 3px 5px !important;
-}
 label{
     font-weight: 500 !important;
 }
