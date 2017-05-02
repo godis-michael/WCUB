@@ -44,8 +44,8 @@ function getVals(){
   // Neither slider will clip the other, so make sure we determine which is larger
   if( slide1 > slide2 ){ var tmp = slide2; slide2 = slide1; slide1 = tmp; }
 
-  $('#firstPer').attr('value', slide1);
-  $('#secPer').attr('value', slide2);
+  $('#id_year_0').attr('value', slide1);
+  $('#id_year_1').attr('value', slide2);
 }
 
 window.onload = function(){

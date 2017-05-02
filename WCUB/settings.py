@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'catalogue.apps.CatalogueConfig',
+    'widget_tweaks',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -48,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'WCUB.urls'
@@ -77,8 +80,12 @@ WSGI_APPLICATION = 'WCUB.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'db.wcub',
+        'USER': 'godis_michael',
+        'PASSWORD': '211195',
+        'HOST': 'localhost',
+        'PORT': ''
     }
 }
 
@@ -116,6 +123,15 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+_ = lambda s: s
+
+LANGUAGES = (
+    ('uk', _('Ukrainian')),
+    ('en', _('English')),
+)
+
+LOCALE_PATHS = ( os.path.join(BASE_DIR, 'locale'), )
 
 
 # Static files (CSS, JavaScript, Images)
