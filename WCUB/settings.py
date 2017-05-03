@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
@@ -26,7 +25,6 @@ SECRET_KEY = '57!+o08a2g$w5h&mvnpfya70&tw+@7o@7780=t&_5l8s##svo_'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -74,7 +72,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'WCUB.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
@@ -84,8 +81,8 @@ DATABASES = {
         'NAME': 'db.wcub',
         'USER': 'godis_michael',
         'PASSWORD': '211195',
-        'HOST': 'localhost',
-        'PORT': ''
+        'HOST': '127.0.0.1',
+        'PORT': '5432'
     }
 }
 
@@ -110,7 +107,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
@@ -131,10 +127,13 @@ LANGUAGES = (
     ('en', _('English')),
 )
 
-LOCALE_PATHS = ( os.path.join(BASE_DIR, 'locale'), )
-
+LOCALE_PATHS = (os.path.join(BASE_DIR, 'locale'),)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+FIXTURE_DIRS = (
+    os.path.join(BASE_DIR, 'catalogue/fixtures'),
+)

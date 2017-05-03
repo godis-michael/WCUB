@@ -21,8 +21,8 @@ class Bancnote(models.Model):
                                                   MaxValueValidator(1000000, validators_errors['par_length'])])
     year = IntegerRangeField(validators=[RangeMinValueValidator(1917), RangeMaxValueValidator(datetime.now().year)])
     size = models.CharField(max_length=7)
-    sign = models.CharField(max_length=20)
-    desc = models.TextField(max_length=200)
+    sign = models.TextField(max_length=250)
+    desc = models.TextField(max_length=500)
     image = models.ImageField(upload_to='bons_images')
 
     def __str__(self):

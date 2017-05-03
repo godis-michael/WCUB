@@ -16,7 +16,7 @@ def index(request):
     bons_list = Bancnote.objects.all().order_by('par')
     bons_filter = BancnoteFilter(request.GET, queryset=bons_list)
     # page = request.GET.get('page', 1)
-    # paginator = Paginator(bons_list, 20)
+    # paginator = Paginator(bons_filter, 20)
     # try:
     #     bons = paginator.page(page)
     # except PageNotAnInteger:
@@ -30,7 +30,8 @@ def index(request):
     # end_index = index + 5 if index <= max_index - 5 else max_index
     # page_range = paginator.page_range[start_index:end_index]
 
-    return render(request, 'catalogue/index.html', {'filter': bons_filter})
+    return render(request, 'catalogue/index.html', {'filter': bons_filter,
+                                                    })
 # 'bons': bons,
 # 'page_range': page_range
 

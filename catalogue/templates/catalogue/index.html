@@ -71,23 +71,23 @@
                         </div>
         </div>
 
-{#        {% if bons.has_other_pages %}#}
+{#        {% if filter.has_other_pages %}#}
 {#            <div>#}
 {#                <ul class="pagination">#}
-{#                {% if bons.has_previous %}#}
-{#                    <li><a href="?page={{ bons.previous_page_number }}">&laquo;</a></li>#}
+{#                {% if filter.has_previous %}#}
+{#                    <li><a href="?page={{ filter.previous_page_number }}">&laquo;</a></li>#}
 {#                {% else %}#}
 {#                    <li class="disabled"><span>&laquo;</span></li>#}
 {#                {% endif %}#}
 {#                {% for i in page_range %}#}
-{#                    {% if bons.number == i %}#}
+{#                    {% if filter.number == i %}#}
 {#                        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>#}
 {#                    {% else %}#}
 {#                        <li><a href="?page={{ i }}">{{ i }}</a></li>#}
 {#                    {% endif %}#}
 {#                {% endfor %}#}
-{#                {% if bons.has_next %}#}
-{#                    <li><a href="?page={{ bons.next_page_number }}">&raquo;</a></li>#}
+{#                {% if filter.has_next %}#}
+{#                    <li><a href="?page={{ filter.next_page_number }}">&raquo;</a></li>#}
 {#                {% else %}#}
 {#                    <li class="disabled"><span>&raquo;</span></li>#}
 {#                {% endif %}#}

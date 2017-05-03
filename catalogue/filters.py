@@ -9,7 +9,7 @@ class BancnoteFilter(django_filters.FilterSet):
                                        widget=forms.RadioSelect(attrs={'class': 'radio'}), empty_label=None)
     par_gt = django_filters.NumberFilter(name='par', lookup_expr='gte', widget=forms.Select)
     par_lt = django_filters.NumberFilter(name='par', lookup_expr='lte', widget=forms.Select)
-    year = django_filters.NumericRangeFilter(name='year', lookup_expr='adjacent_to')
+    year = django_filters.NumericRangeFilter(name='year', lookup_expr='overlap')
 
     class Meta:
         model = Bancnote
