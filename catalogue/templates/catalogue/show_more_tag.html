@@ -1,0 +1,10 @@
+{% load i18n %}
+{% if querystring %}
+    <div class="endless_container">
+        <a class="endless_more" href="{{ path }}{{ querystring }}"
+            rel="{{ querystring_key }}" style="font-size: 11px; color: #c13923;">{{ label }}</a>
+        <div class="endless_loading" style="display: none;">{{ loading|safe }}</div>
+    </div>
+{% elif show_total_in_end %}
+    <a href="#" style="text-decoration: none; color: #999; cursor:default; font-size: 11px;" onclick='return false;'>{{ label }}</a>
+{% endif %}
