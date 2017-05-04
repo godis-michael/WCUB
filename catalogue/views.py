@@ -42,3 +42,7 @@ def image(request):
         'bons': bons
     })
     return render_to_response('catalogue/bon_detail.html', variables)
+
+
+def feedback(request):
+    return render_to_response('catalogue/feedback.html')

@@ -10,7 +10,7 @@ html, body {height: 100% !important;}
 }
 .range-input{
     padding-top: 2%;
-    padding-left: 7%;
+    text-align: center;
 }
 #par{
     padding: 2% 0 2% 0;
@@ -47,6 +47,21 @@ h4{
 }
 .contacts.fa-envelope{
     font-size: 11px;
+}
+#social-networks i{
+    width: 36px;
+    height: 36px;
+    color:#f84c48;
+    border: 1px solid #545454;
+    border-radius: 50%;
+    padding: 7px;
+    font-size: 18px;
+    text-align: center;
+    padding-top: 8px;
+    padding-right: 7px;
+}
+#social-networks i:hover{
+    background-color: #d6d6d6;
 }
 /*       navbar      */
 .navbar-default {
