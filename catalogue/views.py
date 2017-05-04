@@ -6,15 +6,32 @@ from django.shortcuts import render
 from .models import Bancnote
 from .filters import BancnoteFilter
 
-
 # def search(request):
 #     user_list = User.objects.all()
 #     user_filter = UserFilter(request.GET, queryset=user_list)
 #     return render(request, 'search/user_list.html', {'filter': user_filter})
 
-def index(request):
+from el_pagination.decorators import page_template
+
+
+@page_template('catalogue/includes/bon_list.html')  # just add this decorator
+def entry_list(request,
+               template='catalogue/index.html', extra_context=None):
     bons_list = Bancnote.objects.all().order_by('par')
     bons_filter = BancnoteFilter(request.GET, queryset=bons_list)
+
+    context = {
+        'entry_list': bons_filter,
+    }
+    if extra_context is not None:
+        context.update(extra_context)
+    return render(request, template, context)
+
+
+# def index(request):
+#     bons_list = Bancnote.objects.all().order_by('par')
+#     bons_filter = BancnoteFilter(request.GET, queryset=bons_list)
+
     # page = request.GET.get('page', 1)
     # paginator = Paginator(bons_filter, 20)
     # try:
@@ -30,8 +47,10 @@ def index(request):
     # end_index = index + 5 if index <= max_index - 5 else max_index
     # page_range = paginator.page_range[start_index:end_index]
 
-    return render(request, 'catalogue/index.html', {'filter': bons_filter,
-                                                    })
+    # return render(request, 'catalogue/index.html', {'filter': bons_filter,
+    #                                                 })
+
+
 # 'bons': bons,
 # 'page_range': page_range
 

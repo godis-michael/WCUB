@@ -1,6 +1,7 @@
 from django.contrib.postgres.fields import IntegerRangeField
 from django.contrib.postgres.validators import RangeMinValueValidator, RangeMaxValueValidator
 from django.core.validators import MinValueValidator, MaxValueValidator
+
 from django.db import models
 from datetime import datetime
 
