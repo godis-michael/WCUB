@@ -17,7 +17,7 @@
                         </li>
                         <div id="money-type">
                             <ul class="nav nav-pills nav-stacked">
-                                {% for type in filter.form.type %}
+                                {% for type in entry_list.form.type %}
                                     <li><a href="#">
                                         {{ type.tag }}
                                         <label for="{{ type.id_for_label }}">{{ type.choice_label }}</label>
@@ -30,13 +30,13 @@
                                 <i class="fa fa-chevron-up chev"></i></a>
                         </li>
                         <div id="par">
-                            {% render_field filter.form.par_gt id='from' %}{% render_field filter.form.par_lt id='to' %}
+                            {% render_field entry_list.form.par_gt id='from' %}{% render_field entry_list.form.par_lt id='to' %}
                         </div>
                         <li><a href="#" class="toggle-menu" onclick="showcontent('#period')">Роки випуску
                             <i class="fa fa-chevron-up chev"></i></a></li>
                         <div id="period">
                             <div class="range-input">
-                                {% render_field filter.form.year maxlength='4' %}
+                                {% render_field entry_list.form.year maxlength='4' %}
                             </div>
                             <div class="range-slider">
                                 <input value="1917" min="1917" max="2017" step="1" type="range">
@@ -52,25 +52,11 @@
         </div>
         <div class="col-lg-10 col-md-9 col-sm-9 col-xs-12 ">
             <br><br>
-            <div class="container-fluid">
-                <div class="row">
-                    {#               filtering here#}
-                    {% for bon in filter.qs %}
-                        {% if forloop.counter0|divisibleby:"4" %}
-                            </div>
-                            <div class="row">
-                        {% endif %}
-                        <div class="col-sm-3 col-lg-3">
-                            <div style="display: block; text-align: center; margin: 0 auto">
-                                <a href="{{ bon.id }}">
-                                    <img src="{{ bon.image.url }}" style="width: 50%; height: 50%"/>
-                                    <h5>{{ bon.par }} {{ bon.type }} {{ bon.year.lower }}-{{ bon.year.upper }}</h5>
-                                </a>
-                            </div>
-                        </div>
-                    {% endfor %}
-                    </div>
-            </div>
+            {% include page_template %}
+            {% block js %}
+                {{ block.super }}
+                <script>$.endlessPaginate();</script>
+            {% endblock %}
         </div>
     </div>
 
@@ -99,4 +85,3 @@
     {#        {% endif %}#}
 
 {% endblock %}
-

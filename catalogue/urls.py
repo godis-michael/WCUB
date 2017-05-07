@@ -5,7 +5,7 @@ from catalogue import views
 from catalogue.models import Bancnote
 
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
+    url(r'^$', views.entry_list, name='entry_list'),
     url(r'^(?P<pk>\d+)$', DetailView.as_view(model=Bancnote, template_name='catalogue/bon_detail.html')),
     url(r'^feedback/$', views.feedback, name='feedback'),
 ]
