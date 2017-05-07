@@ -1,22 +1,27 @@
 {% extends 'catalogue/base.html' %}
 {% block title %}Контакти{% endblock %}
-
+{% load staticfiles %}
 {% block content %}
     <div class="row">
         <br>
-        <div class="col-lg-5 col-lg-offset-2">
-            <h2>З'явилось запитання?</h2>
-            <h2>Знайшли несправність на сайті?</h2>
-            <h2>Є ідеї або пропозиції щодо роботи порталу?</h2>
-            <h2>Напиши нам про це</h2>
+        <div class="col-lg-4" style="margin-top: 5%; text-align: right">
+            <p style="font-size: 18px">З'явилось запитання?</p>
+            <p style="font-size: 18px">Знайшли несправність на сайті?</p>
+            <p style="font-size: 18px">Є ідеї або пропозиції щодо роботи порталу?</p>
+            <p style="font-size: 42px">Напиши нам про це</p>
+        </div>
+        <div style="text-align: right; margin-top: 1%; " class="col-lg-3">
+            <img src="{% static 'img/hrn.jpg' %}"
+                 alt="" style="border-radius: 50%">
         </div>
         <div class="col-lg-5">
+            <br>
             <form action="">
                 <input type="text" id="name" placeholder="Ім'я"> <br>
-                <input type="text" id="email" placeholder="E-mail"> <br>
+                <input type="email" id="email" placeholder="E-mail"> <br>
                 <textarea style="resize: none; border: 1px solid #d6d6d6;border-radius: 3px;" id="message_text"
-                          cols="30" rows="5" placeholder="Повідомлення"></textarea> <br>
-                <button style="background:#1d6e87; color: white; border: 0; width: 10vw; margin: 5px 8px; height: 7vh;"
+                          cols="45" rows="6" placeholder="Повідомлення"></textarea> <br>
+                <button style="background:#1d6e87; color: white; border: 0; width: 9vw; margin: 5px 8px; height: 7vh;"
                         class="btn btn-default">Відправити
                 </button>
                 <br> <br>
@@ -26,13 +31,14 @@
 
     <style>
         #name, #email, #message_text {
-            width: 25vw;
             font-size: 18px;
             padding: 5px 8px;
             margin: 5px 8px;
         }
-    #name, #email{
+
+        #name, #email {
             height: 7vh;
+            width: 20vw;
         }
     </style>
 {% endblock %}

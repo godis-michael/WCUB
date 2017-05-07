@@ -16,7 +16,7 @@ from el_pagination.decorators import page_template
 
 @page_template('catalogue/includes/bon_list.html')  # just add this decorator
 def entry_list(request,
-               template='catalogue/index.html', extra_context=None):
+               template='catalogue/catalogue.html', extra_context=None):
     bons_list = Bancnote.objects.all().order_by('par')
     bons_filter = BancnoteFilter(request.GET, queryset=bons_list)
 
@@ -47,7 +47,7 @@ def entry_list(request,
     # end_index = index + 5 if index <= max_index - 5 else max_index
     # page_range = paginator.page_range[start_index:end_index]
 
-    # return render(request, 'catalogue/index.html', {'filter': bons_filter,
+    # return render(request, 'catalogue/catalogue.html', {'filter': bons_filter,
     #                                                 })
 
 
@@ -65,3 +65,7 @@ def image(request):
 
 def feedback(request):
     return render_to_response('catalogue/feedback.html')
+
+
+def index(request):
+    return render_to_response('catalogue/index.html')
