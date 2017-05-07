@@ -140,4 +140,4 @@ FIXTURE_DIRS = (
     os.path.join(BASE_DIR, 'catalogue/fixtures'),
 )
 
-EL_PAGINATION_LOADING = """<img src="http://www.shopfashionisland.com/images/spinner.gif" alt="loading" style="width: 50px; height: 50px"/>"""
+EL_PAGINATION_LOADING = """<img src="static/catalogue/img/loading.gif" style="width: 50px; height: 50px"/>"""

@@ -1,27 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bc3a1965-0cb8-4f0e-8c4a-a7743ad82a57" name="Default" comment="" />
-    <list id="58f296ed-bcea-4d5b-ad51-dc4c92f6dfac" name=" - Працююча форма підписки" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/catalogue/migrations/0004_subscribers.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/catalogue/migrations/0005_auto_20170507_0050.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/catalogue/templatetags/edited_show_more.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/catalogue/templatetags/show_more_with_counts.py" afterPath="" />
+    <list default="true" id="bc3a1965-0cb8-4f0e-8c4a-a7743ad82a57" name="Default" comment=" - Працююча форма підписки">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/catalogue/static/catalogue/img/loader.gif" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/catalogue/static/catalogue/img/loading.gif" afterPath="$PROJECT_DIR$/catalogue/static/catalogue/img/loading.gif" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WCUB/settings.py" afterPath="$PROJECT_DIR$/WCUB/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/catalogue/admin.py" afterPath="$PROJECT_DIR$/catalogue/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/catalogue/models.py" afterPath="$PROJECT_DIR$/catalogue/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/catalogue/static/catalogue/css/style.css" afterPath="$PROJECT_DIR$/catalogue/static/catalogue/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/catalogue/templates/catalogue/base.html" afterPath="$PROJECT_DIR$/catalogue/templates/catalogue/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/catalogue/templates/catalogue/bon_detail.html" afterPath="$PROJECT_DIR$/catalogue/templates/catalogue/bon_detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/catalogue/templates/catalogue/feedback.html" afterPath="$PROJECT_DIR$/catalogue/templates/catalogue/feedback.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/catalogue/templates/catalogue/includes/bon_list.html" afterPath="$PROJECT_DIR$/catalogue/templates/catalogue/includes/bon_list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/catalogue/templates/catalogue/includes/footer.html" afterPath="$PROJECT_DIR$/catalogue/templates/catalogue/includes/footer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/catalogue/templates/catalogue/includes/header.html" afterPath="$PROJECT_DIR$/catalogue/templates/catalogue/includes/header.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/catalogue/templates/catalogue/index.html" afterPath="$PROJECT_DIR$/catalogue/templates/catalogue/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/catalogue/templates/catalogue/show_more_tag.html" afterPath="$PROJECT_DIR$/catalogue/templates/catalogue/show_more_tag.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/catalogue/urls.py" afterPath="$PROJECT_DIR$/catalogue/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/catalogue/views.py" afterPath="$PROJECT_DIR$/catalogue/views.py" />
     </list>
     <ignored path="D:\Projects\WCUB\.idea\shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,23 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/catalogue/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="24" column="43" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#60#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/catalogue/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+            <state relative-caret-position="-1">
+              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
               <folding>
                 <element signature="e#1#66#0" expanded="true" />
               </folding>
@@ -99,7 +71,7 @@
         <entry file="file://$PROJECT_DIR$/catalogue/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="216">
-              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -127,16 +99,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WCUB/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1548">
-              <caret line="86" column="22" lean-forward="false" selection-start-line="86" selection-start-column="22" selection-end-line="86" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="footer.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/catalogue/templates/catalogue/includes/footer.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -149,11 +111,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/WCUB/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="421">
+              <caret line="132" column="0" lean-forward="true" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="feedback.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/catalogue/templates/catalogue/feedback.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="331">
-              <caret line="30" column="19" lean-forward="true" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
+              <caret line="30" column="19" lean-forward="false" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
               <folding>
                 <element signature="n#style#0;n#button#0;n#form#0;n#div#2;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -219,11 +191,11 @@
         <option value="$PROJECT_DIR$/catalogue/templates/catalogue/test.html" />
         <option value="$PROJECT_DIR$/catalogue/context_processors.py" />
         <option value="$PROJECT_DIR$/catalogue/middleware.py" />
-        <option value="$PROJECT_DIR$/WCUB/settings.py" />
         <option value="$PROJECT_DIR$/catalogue/templates/catalogue/includes/footer.html" />
         <option value="$PROJECT_DIR$/catalogue/templates/catalogue/feedback.html" />
         <option value="$PROJECT_DIR$/catalogue/urls.py" />
         <option value="$PROJECT_DIR$/catalogue/views.py" />
+        <option value="$PROJECT_DIR$/WCUB/settings.py" />
       </list>
     </option>
   </component>
@@ -509,15 +481,16 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\godis\PycharmProjects\WCUB\catalogue\templatetags\catalogue" />
+      <recent name="C:\Users\godis\PycharmProjects\WCUB\catalogue\templatetags" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\godis\PycharmProjects\WCUB\catalogue\static\catalogue\img" />
       <recent name="C:\Users\godis\PycharmProjects\WCUB\catalogue\templatetags" />
       <recent name="C:\Users\godis\PycharmProjects\WCUB\catalogue\templatetags\catalogue" />
       <recent name="C:\Users\godis\PycharmProjects\WCUB\catalogue" />
       <recent name="C:\Users\godis\PycharmProjects\WCUB\catalogue\static\catalogue" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\godis\PycharmProjects\WCUB\catalogue\templatetags\catalogue" />
-      <recent name="C:\Users\godis\PycharmProjects\WCUB\catalogue\templatetags" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -741,7 +714,7 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="bc3a1965-0cb8-4f0e-8c4a-a7743ad82a57" name="Default" comment="" />
-      <changelist id="58f296ed-bcea-4d5b-ad51-dc4c92f6dfac" name=" - Працююча форма підписки" comment="" />
+      <changelist id="" name=" - Працююча форма підписки" comment="" />
       <created>1491899982580</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -831,7 +804,14 @@
       <option name="project" value="LOCAL" />
       <updated>1494190097619</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary=" - Працююча форма підписки">
+      <created>1494190180873</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1494190180873</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TodoView">
@@ -845,14 +825,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17552084" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32649842" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32645404" sideWeight="0.49707174" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32645404" sideWeight="0.49707174" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28517824" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28517824" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -934,7 +915,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/media/bons_images/1732936.jpg" />
     <entry file="file://$PROJECT_DIR$/media/bons_images/200.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1047,11 +1027,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/catalogue/static/catalogue/img/loading.gif">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/el_pagination/templates/el_pagination/show_more.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1150,14 +1125,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WCUB/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1548">
-          <caret line="86" column="22" lean-forward="false" selection-start-line="86" selection-start-column="22" selection-end-line="86" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/catalogue/templates/catalogue/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -1187,7 +1154,7 @@
     <entry file="file://$PROJECT_DIR$/catalogue/templates/catalogue/feedback.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="331">
-          <caret line="30" column="19" lean-forward="true" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
+          <caret line="30" column="19" lean-forward="false" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
           <folding>
             <element signature="n#style#0;n#button#0;n#form#0;n#div#2;n#div#0;n#!!top" expanded="true" />
           </folding>
@@ -1215,7 +1182,7 @@
     <entry file="file://$PROJECT_DIR$/catalogue/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
@@ -1224,11 +1191,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/catalogue/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state relative-caret-position="-1">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding>
             <element signature="e#1#66#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/catalogue/static/catalogue/img/loading.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/catalogue/static/catalogue/img/loader.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WCUB/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="132" column="0" lean-forward="true" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
