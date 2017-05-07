@@ -1,11 +1,11 @@
-{% load el_pagination_tags show_more_with_counts%}
+{% load el_pagination_tags edited_show_more %}
 
 {% block bon_list %}
 
     <div class="container-fluid">
         <div class="row">
             {# filtering here #}
-            {% paginate 20 entry_list.qs as objects %}
+            {% paginate 20 bons.qs as objects %}
             {% for bon in objects %}
                 {% if forloop.counter0|divisibleby:"4" %}
                     </div>
@@ -21,6 +21,6 @@
                 </div>
             {% endfor %}
             </div>
-        {% show_more_with_counts 20 objects|length verb='users' %}
+         {% edited_show_more %}
         </div>
 {% endblock %}

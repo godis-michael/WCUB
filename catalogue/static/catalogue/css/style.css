@@ -229,3 +229,7 @@ div.range-slider input[type=range]::-moz-focus-outer {
     padding-left: 10px;
 }
 /*                         */
+.subscribe{
+    padding: 5px 8px;
+    font-family: 'Georgia', Times, serif;
+}

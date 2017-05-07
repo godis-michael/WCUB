@@ -1,3 +1,5 @@
+{% load widget_tweaks %}
+
 {% block footer %}
     <footer>
         <div class="container-fluid">
@@ -11,15 +13,38 @@
                         <p id="text-email">Отримуйте останні новини каталогу</p>
                     </div>
                     <div class="col-lg-6">
-                        <div class="input-group input-group-lg">
-                            <input type="text" style="padding: 5px 8px; font-family: 'Georgia', Times, serif;" class="form-control"
-                                   placeholder="Введіть ваш E-Mail">
-                            <span class="input-group-btn">
-                                <button style="background:#1d6e87; color: white; border: 0" class="btn btn-default">Підписатись</button>
-                            </span>
-                        </div>
+                        <form action="{% url 'subscribe' %}" method="POST">
+                            {% csrf_token %}
+                            <div class="input-group input-group-lg">
+                                {% for field in subscribe_form.visible_fields %}
+                                    {% render_field field placeholder="Введіть ваш E-Mail" class='subscribe form-control' %}
+                                {% endfor %}
+{#                                {{ subscribe_form.as_p }}#}
+{#                                {% if subscribe_form.non_field_errors %}#}
+{#                                    <div class="form-group text-error">#}
+{#                                        {{ subscribe_form.non_field_errors }}#}
+{#                                    </div>#}
+{#                                {% endif %}#}
+{##}
+{#                                {% for hidden in subscribe_form.hidden_fields %}#}
+{#                                    {{ hidden }}#}
+{#                                {% endfor %}#}
+{#                                {% for field in subscribe_form.visible_fields %}#}
+{#                                    {{ field.help_text}}#}
+{#                                    {{ field }}#}
+{#                                    {% if field.errors %}#}
+{#                                        <span>{{ field.errors|striptags }}</span>#}
+{#                                    {% endif %}#}
+{#                                {% endfor %}#}
+                                <span class="input-group-btn">
+                                    <button type="submit" style="background:#1d6e87; color: white; border: 0"
+                                        class="btn btn-default">Підписатись</button>
+                                </span>
+                            </div>
+                        </form>
                     </div>
                 </div>
+            </div>
                 <hr style="margin: 10px 0; border-color: #d6d6d6">
             </div>
             <div class="container-fluid">

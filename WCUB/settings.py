@@ -66,6 +66,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'catalogue.context_processors.SubscribeFormGlobal',
             ],
         },
     },
@@ -138,3 +139,5 @@ STATIC_URL = '/static/'
 FIXTURE_DIRS = (
     os.path.join(BASE_DIR, 'catalogue/fixtures'),
 )
+
+EL_PAGINATION_LOADING = """<img src="http://www.shopfashionisland.com/images/spinner.gif" alt="loading" style="width: 50px; height: 50px"/>"""

@@ -1,5 +1,6 @@
 from django.contrib import admin
+from catalogue import models
 
-from catalogue.models import Bancnote
+myModels = [models.Bancnote, models.Subscriber]
 
-admin.site.register(Bancnote)
+admin.site.register(myModels)

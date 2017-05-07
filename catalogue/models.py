@@ -28,3 +28,10 @@ class Bancnote(models.Model):
 
     def __str__(self):
         return str(self.par) + ' ' + self.type + ' ' + str(self.year.lower) + '-' + str(self.year.upper)
+
+
+class Subscriber(models.Model):
+    email = models.EmailField()
+
+    def __str__(self):
+        return self.email

@@ -15,7 +15,8 @@
         </div>
         <div class="col-lg-1" style="border-left: solid 1px red; height: 58vh;"></div>
         <div class="col-lg-5">
-            <form action="">
+            <form>
+                {% csrf_token %}
                 <h4>З'явилось запитання?</h4>
                 <h4>Знайшли несправність на сайті?</h4>
                 <h4>Є ідеї або пропозиції щодо роботи порталу?</h4>
