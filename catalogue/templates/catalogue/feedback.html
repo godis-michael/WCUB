@@ -4,27 +4,20 @@
 {% block content %}
     <div class="row">
         <br>
-        <div class="col-lg-3 col-lg-offset-2">
-            <h1>Соцмережі</h1>
-            <div id="social-networks">
-                <a href="https://vk.com/" target="_blank"><i class="fa fa-vk"></i></a>
-                <a href="https://facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
-                <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>
-                <a href="https://instagram.com/" target="_blank"><i class="fa fa-instagram"></i></a>
-            </div>
+        <div class="col-lg-5 col-lg-offset-2">
+            <h2>З'явилось запитання?</h2>
+            <h2>Знайшли несправність на сайті?</h2>
+            <h2>Є ідеї або пропозиції щодо роботи порталу?</h2>
+            <h2>Напиши нам про це</h2>
         </div>
-        <div class="col-lg-1" style="border-left: solid 1px red; height: 58vh;"></div>
         <div class="col-lg-5">
             <form action="">
-                <h4>З'явилось запитання?</h4>
-                <h4>Знайшли несправність на сайті?</h4>
-                <h4>Є ідеї або пропозиції щодо роботи порталу?</h4>
-                <h1>Напиши нам про це</h1>
                 <input type="text" id="name" placeholder="Ім'я"> <br>
                 <input type="text" id="email" placeholder="E-mail"> <br>
-                <textarea id="message_text" cols="30" rows="1" placeholder="Повідомлення"></textarea> <br>
-                <button style="background:#1d6e87; color: white; border: 0; width: 17vw; margin: 5px 8px; height: 6vh;"
-                        class="btn btn-default">Підписатись
+                <textarea style="resize: none; border: 1px solid #d6d6d6;border-radius: 3px;" id="message_text"
+                          cols="30" rows="5" placeholder="Повідомлення"></textarea> <br>
+                <button style="background:#1d6e87; color: white; border: 0; width: 10vw; margin: 5px 8px; height: 7vh;"
+                        class="btn btn-default">Відправити
                 </button>
                 <br> <br>
             </form>
@@ -33,12 +26,13 @@
 
     <style>
         #name, #email, #message_text {
-            height: 7vh;
-            width: 17vw;
+            width: 25vw;
             font-size: 18px;
             padding: 5px 8px;
             margin: 5px 8px;
-            text-align: right;
+        }
+    #name, #email{
+            height: 7vh;
         }
     </style>
 {% endblock %}
