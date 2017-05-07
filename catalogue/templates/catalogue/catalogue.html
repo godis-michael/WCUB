@@ -1,0 +1,87 @@
+{% extends 'catalogue/base.html' %}
+{% block title %}Каталог{% endblock %}
+
+{% load widget_tweaks %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
+            <br> <br>
+            <form method="get">
+                <div class="well bs-sidebar" id="style" style="background-color:#fff">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li>
+                            <a href="#" class="toggle-menu" onclick="showcontent('#money-type')">Тип купюри
+                                <i class="fa fa-chevron-up chev"></i></a>
+                        </li>
+                        <div id="money-type">
+                            <ul class="nav nav-pills nav-stacked">
+                                {% for type in entry_list.form.type %}
+                                    <li><a href="#">
+                                        {{ type.tag }}
+                                        <label for="{{ type.id_for_label }}">{{ type.choice_label }}</label>
+                                    </a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <li>
+                            <a href="#" class="toggle-menu" onclick="showcontent('#par')">Номінал
+                                <i class="fa fa-chevron-up chev"></i></a>
+                        </li>
+                        <div id="par">
+                            {% render_field entry_list.form.par_gt id='from' %}{% render_field entry_list.form.par_lt id='to' %}
+                        </div>
+                        <li><a href="#" class="toggle-menu" onclick="showcontent('#period')">Роки випуску
+                            <i class="fa fa-chevron-up chev"></i></a></li>
+                        <div id="period">
+                            <div class="range-input">
+                                {% render_field entry_list.form.year maxlength='4' %}
+                            </div>
+                            <div class="range-slider">
+                                <input value="1917" min="1917" max="2017" step="1" type="range">
+                                <input value="2017" min="1917" max="2017" step="1" type="range">
+                            </div>
+                        </div>
+                    </ul>
+                    <button type="submit" class="btn btn-primary" style="text-align: center; width: 100%">
+                        <span class="glyphicon glyphicon-search"></span> Search
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-10 col-md-9 col-sm-9 col-xs-12 ">
+            <br><br>
+            {% include page_template %}
+            {% block js %}
+                {{ block.super }}
+                <script>$.endlessPaginate();</script>
+            {% endblock %}
+        </div>
+    </div>
+
+    {#        {% if filter.has_other_pages %}#}
+    {#            <div>#}
+    {#                <ul class="pagination">#}
+    {#                {% if filter.has_previous %}#}
+    {#                    <li><a href="?page={{ filter.previous_page_number }}">&laquo;</a></li>#}
+    {#                {% else %}#}
+    {#                    <li class="disabled"><span>&laquo;</span></li>#}
+    {#                {% endif %}#}
+    {#                {% for i in page_range %}#}
+    {#                    {% if filter.number == i %}#}
+    {#                        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>#}
+    {#                    {% else %}#}
+    {#                        <li><a href="?page={{ i }}">{{ i }}</a></li>#}
+    {#                    {% endif %}#}
+    {#                {% endfor %}#}
+    {#                {% if filter.has_next %}#}
+    {#                    <li><a href="?page={{ filter.next_page_number }}">&raquo;</a></li>#}
+    {#                {% else %}#}
+    {#                    <li class="disabled"><span>&raquo;</span></li>#}
+    {#                {% endif %}#}
+    {#                </ul>#}
+    {#            </div>#}
+    {#        {% endif %}#}
+
+{% endblock %}

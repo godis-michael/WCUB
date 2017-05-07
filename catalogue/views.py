@@ -1,4 +1,3 @@
-
 from django.shortcuts import render, render_to_response, redirect
 from django.template import RequestContext
 from catalogue.forms import SubscriberForm
@@ -42,3 +41,7 @@ def subscribe_us(request):
         subscribe_form = SubscriberForm()
     return redirect(request.META['HTTP_REFERER'])
 
+
+
+def index(request):
+    return render_to_response('catalogue/index.html')
