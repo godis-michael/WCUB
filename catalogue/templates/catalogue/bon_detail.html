@@ -1,4 +1,6 @@
 {% extends 'catalogue/base.html' %}
+
+{% load mathfilters %}
 {% block title %}Каталог{% endblock %}
 
 {% include  'catalogue/includes/header.html'%}
@@ -6,9 +8,32 @@
 {% block content %}
     <img src="{{ bancnote.image.url }}"/>
     <ul>
-        <li>{{ bancnote.par }} {{ bancnote.type }}</li>
-        <li>{{ bancnote.desc }}</li>
-        <li>{{ bancnote.year.lower }} - {{ bancnote.year.upper }}</li>
+        <li>{{ bancnote.par }}
+            {% if bancnote.par == 1 %}
+                 {{ bancnote.type }}
+            {% endif %}
+            {% if bancnote.par == 2 and bancnote.type == 'Гривня' %}
+                Гривні
+            {% endif %}
+            {% if bancnote.par == 2 and bancnote.type == 'Карбованець' %}
+                Карбованця
+            {% endif %}
+            {% if bancnote.par == 3 and bancnote.type == 'Карбованець' %}
+                Карбованці
+            {% endif %}
+            {% if bancnote.par > 4 and bancnote.type == 'Гривня' %}
+                Гривень
+            {% endif %}
+            {% if bancnote.par > 4 and bancnote.type == 'Карбованець' %}
+                Карбованців
+            {% endif %}
+        <li>{{ bancnote.desc | safe}}</li>
+        <li>{% if bancnote.year.upper|sub:bancnote.year.lower == 1 %}
+                {{ bancnote.year.lower }}
+            {% endif %}
+            {% if bancnote.year.upper|sub:bancnote.year.lower > 1 %}
+                {{ bancnote.year.lower }} - {{ bancnote.year.upper | sub:1 }}
+            {% endif %}</li>
         <li>{{ bancnote.size }}</li>
         {{ bancnote.sign | safe }}
         <li>{{ bancnote.year.lower }} - {{ bancnote.year.upper }}</li>

@@ -5,9 +5,10 @@ from catalogue import views
 from catalogue.models import Bancnote
 
 urlpatterns = [
-    url(r'^$', views.index, name='index')
-    url(r'catalogue^$', views.bons_list, name='bons_list'),
-    url(r'^(?P<pk>\d+)$', DetailView.as_view(model=Bancnote, template_name='catalogue/bon_detail.html')),
+    url(r'^$', views.index, name='index'),
+    url(r'^catalogue/$', views.bons_list, name='bons_list'),
     url(r'^feedback/$', views.feedback, name='feedback'),
-    url(r'^subscribe/$', views.subscribe_us, name='subscribe')
+    url(r'^subscribe/$', views.subscribe_us, name='subscribe'),
+    url(r'^catalogue/(?P<pk>\d+)/$', DetailView.as_view(model=Bancnote, template_name='catalogue/bon_detail.html')),
+    url(r'^feedback/success/$', views.feedback_success, name='success'),
 ]

@@ -37,6 +37,13 @@
 {#                                    {% endif %}#}
 {#                                {% endfor %}#}
                                 <span class="input-group-btn">
+{#                                    <button#}
+{#                                        style="background:#1d6e87; color: white; border: 0"#}
+{#                                        class="btn btn-default g-recaptcha"#}
+{#                                        data-sitekey="6Lf9eiAUAAAAAMSr6vQ0UOOzUr-LwBRp9dfoxdxX"#}
+{#                                        data-callback="recaptchaCallback">#}
+{#                                        Підписатись#}
+{#                                    </button>#}
                                     <button type="submit" style="background:#1d6e87; color: white; border: 0"
                                         class="btn btn-default">Підписатись</button>
                                 </span>
@@ -74,3 +81,13 @@
         </div>
     </footer>
 {% endblock %}
+
+{#{% block js %}#}
+{#    <script type="text/javascript">#}
+{#        var recaptchaCallback = function(resp) {#}
+{#            var form = document.getElementById("recaptcha-form");#}
+{#            form.querySelectorAll('button').disabled = true;#}
+{#            form.submit();#}
+{#        };#}
+{#    </script>#}
+{#{% endblock %}#}

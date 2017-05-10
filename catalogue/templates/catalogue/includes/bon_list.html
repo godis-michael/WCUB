@@ -1,4 +1,4 @@
-{% load el_pagination_tags edited_show_more %}
+{% load el_pagination_tags edited_show_more mathfilters %}
 
 {% block bon_list %}
 
@@ -15,7 +15,33 @@
                     <div style="display: block; text-align: center; margin: 0 auto">
                         <a href="{{ bon.id }}">
                             <img src="{{ bon.image.url }}" style="width: 50%; height: 50%"/>
-                            <h5>{{ bon.par }} {{ bon.type }} {{ bon.year.lower }}-{{ bon.year.upper  }}</h5>
+                            <h5>{{ bon.par }}
+                                {% if bon.par == 1 %}
+                                     {{ bon.type }}
+                                {% endif %}
+                                {% if bon.par == 2 and bon.type == 'Гривня' %}
+                                    Гривні
+                                {% endif %}
+                                {% if bon.par == 2 and bon.type == 'Карбованець' %}
+                                    Карбованця
+                                {% endif %}
+                                {% if bon.par == 3 and bon.type == 'Карбованець' %}
+                                    Карбованці
+                                {% endif %}
+                                {% if bon.par > 4 and bon.type == 'Гривня' %}
+                                    Гривень
+                                {% endif %}
+                                {% if bon.par > 4 and bon.type == 'Карбованець' %}
+                                    Карбованців
+                                {% endif %}
+
+                                {% if bon.year.upper|sub:bon.year.lower == 1 %}
+                                    {{ bon.year.lower }}
+                                {% endif %}
+                                {% if bon.year.upper|sub:bon.year.lower > 1 %}
+                                    {{ bon.year.lower }} - {{ bon.year.upper | sub:1 }}
+                                {% endif %}
+                            </h5>
                         </a>
                     </div>
                 </div>

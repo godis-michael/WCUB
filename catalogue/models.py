@@ -5,6 +5,8 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 from datetime import datetime
 
+from psycopg2._range import NumericRange
+
 
 class Bancnote(models.Model):
     validators_errors = {'par_length': 'Змініть номінал на коректний'}
@@ -20,10 +22,10 @@ class Bancnote(models.Model):
     type = models.CharField(max_length=11, choices=TYPE_CHOICES, default=HRYVNA)
     par = models.PositiveIntegerField(validators=[MinValueValidator(1, validators_errors['par_length']),
                                                   MaxValueValidator(1000000, validators_errors['par_length'])])
-    year = IntegerRangeField(validators=[RangeMinValueValidator(1917), RangeMaxValueValidator(datetime.now().year)])
+    year = IntegerRangeField(validators=[RangeMinValueValidator(1917), RangeMaxValueValidator(datetime.now().year + 1)])
     size = models.CharField(max_length=7)
-    sign = models.TextField(max_length=250)
-    desc = models.TextField(max_length=500)
+    sign = models.TextField(max_length=250, blank=True)
+    desc = models.TextField(max_length=1500)
     image = models.ImageField(upload_to='bons_images')
 
     def __str__(self):

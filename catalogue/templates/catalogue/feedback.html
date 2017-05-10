@@ -1,6 +1,6 @@
 {% extends 'catalogue/base.html' %}
 {% block title %}Контакти{% endblock %}
-{% load staticfiles %}
+{% load staticfiles widget_tweaks%}
 {% block content %}
     <div class="row">
         <br>
@@ -11,34 +11,63 @@
             <p style="font-size: 42px">Напиши нам про це</p>
         </div>
         <div style="text-align: right; margin-top: 1%; " class="col-lg-3">
-            <img src="{% static 'img/hrn.jpg' %}"
+            <img src="{% static 'catalogue/img/hrn.jpg' %}"
                  alt="" style="border-radius: 50%">
         </div>
         <div class="col-lg-5">
-            <form>
+            <form method="post" id="recaptcha-form">
                 {% csrf_token %}
-                <input type="text" id="name" placeholder="Ім'я"> <br>
-                <input type="email" id="email" placeholder="E-mail"> <br>
-                <textarea style="resize: none; border: 1px solid #d6d6d6;border-radius: 3px;" id="message_text"
-                          cols="45" rows="6" placeholder="Повідомлення"></textarea> <br>
-                <button style="background:#1d6e87; color: white; border: 0; width: 9vw; margin: 5px 8px; height: 7vh;"
-                        class="btn btn-default">Відправити
+{#                <script type="text/javascript">#}
+{#                    var recaptchaCallback = function(resp) {#}
+{#                        var form = document.getElementById("recaptcha-form");#}
+{#                        form.querySelectorAll('button').disabled = true;#}
+{#                        form.submit();#}
+{#                    };#}
+{#                </script>#}
+                {% render_field form.subject placeholder="Тема" %}
+                {% render_field form.from_email placeholder="E-mail" %}
+                {% render_field form.message placeholder="Повідомлення" cols="45" rows="6" style="resize: none; border: 1px solid #d6d6d6;border-radius: 3px;" %}
+                <br>
+{#                <button#}
+{#                    type="submit"#}
+{#                    style="background:#1d6e87; color: white; border: 0; width: 9vw; margin: 5px 8px; height: 7vh;"#}
+{#                    class="btn btn-default g-recaptcha"#}
+{#                    data-sitekey="6LefmiAUAAAAAFj-v5prF8Z0wXkqkijI-BZG_Zi5"#}
+{#                    data-callback="recaptchaCallback">#}
+{#                    Відправити#}
+{#                </button>#}
+                <button
+                    style="background:#1d6e87; color: white; border: 0; width: 9vw; margin: 5px 8px; height: 7vh;"
+                    class="btn btn-default">
+                    Відправити
                 </button>
+                <div class="g-recaptcha" data-sitekey="6LedmiAUAAAAAKZLXLPjr_P65OCui0yYgIxyvErS"></div>
+{#                {% render_field form.captcha %}#}
                 <br> <br>
             </form>
         </div>
     </div>
 
     <style>
-        #name, #email, #message_text {
+        #id_subject, #id_from_email, #id_message {
             font-size: 18px;
             padding: 5px 8px;
             margin: 5px 8px;
         }
 
-        #name, #email {
+        #id_subject, #id_from_email {
             height: 7vh;
             width: 20vw;
         }
     </style>
 {% endblock %}
+
+{#{% block js %}#}
+{#    <script type="text/javascript">#}
+{#        var recaptchaCallback = function(resp) {#}
+{#            var form = document.getElementById("recaptcha-form");#}
+{#            form.querySelectorAll('button').disabled = true;#}
+{#            form.submit();#}
+{#        };#}
+{#    </script>#}
+{#{% endblock %}#}

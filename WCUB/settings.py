@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'django_filters',
     'el_pagination',
+    'captcha',
+    'mathfilters',
 ]
 
 MIDDLEWARE = [
@@ -140,4 +142,19 @@ FIXTURE_DIRS = (
     os.path.join(BASE_DIR, 'catalogue/fixtures'),
 )
 
-EL_PAGINATION_LOADING = """<img src="static/catalogue/img/loading.gif" style="width: 50px; height: 50px"/>"""
+EL_PAGINATION_LOADING = """<img src="/static/catalogue/img/loading.gif" style="width: 50px; height: 50px"/>"""
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django_mailgun.MailgunBackend'
+# MAILGUN_ACCESS_KEY = 'key-0cfebad8a04a3747d4359f0c5832b4da'
+# MAILGUN_SERVER_NAME = 'https://api.mailgun.net/v3/sandboxf0353b3b7145447facbf438f8474feb7.mailgun.org'
+# EMAIL_HOST = 'smtp.mailgun.org'
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = 'postmaster@sandboxf0353b3b7145447facbf438f8474feb7.mailgun.org'
+# EMAIL_HOST_PASSWORD = 'ba16d0aa70529184edf11fc11ef810ac'
+# EMAIL_USE_TLS = True
+
+GOOGLE_RECAPTCHA_SECRET_KEY = '6LefmiAUAAAAAC44FUrNQ-mmZbAm75DOqTzbQ4_j'
+# RECAPTCHA_PUBLIC_KEY = '6LdIhiAUAAAAADlFnVeU_FkL2iKgbTtc_tFuohIi'
+# RECAPTCHA_PRIVATE_KEY = '6LdIhiAUAAAAACtRx8TM6ulxd2TaSSyQ3Limp6Ic'
+NOCAPTCHA = True
