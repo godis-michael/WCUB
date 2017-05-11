@@ -5,8 +5,6 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 from datetime import datetime
 
-from psycopg2._range import NumericRange
-
 
 class Bancnote(models.Model):
     validators_errors = {'par_length': 'Змініть номінал на коректний'}
