@@ -3,6 +3,35 @@
 {% load staticfiles %}
 
 {% block content %}
+    <div class="row">
+        <div class="col-lg-4 col-lg-offset-2">
+            <h2>Ласкаво просимо на веб-каталог українських банкнот</h2>
+            <a href="{% url 'catalogue' %}" class="btn btn-default">Перейти до каталогу</a>
+        </div>
+        <div class="col-lg-5">
+            <h2>Останні новини:</h2>
+            <div class="news-block">
+                <h4>Заголовок</h4>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto asperiores, doloremque earum enim
+                eum, excepturi illum laudantium minus molestiae, quam quis reiciendis similique unde veritatis
+                voluptates! Architecto debitis nesciunt ut.
+            </div>
+            <br>
+            <div class="news-block">
+                <h4>Заголовок</h4>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum id illum, modi odio quae repellat
+                temporibus! A accusantium delectus deleniti, magni minima, mollitia nemo non quam temporibus ullam
+                veniam, voluptate!
+            </div>
+            <br>
+            <div class="news-block">
+                <h4>Заголовок</h4>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam beatae doloremque earum id, iste
+                laborum, minima molestias nihil numquam officia possimus quam quisquam rerum sunt temporibus ut,
+                voluptas voluptatibus. Delectus.
+            </div>
+        </div>
+    </div>
     <style>
         body {background-image: url({% static 'catalogue/img/bckg.jpg' %});
               background-size: cover;

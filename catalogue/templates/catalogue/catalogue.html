@@ -29,8 +29,9 @@
                             <a href="#" class="toggle-menu" onclick="showcontent('#par')">Номінал
                                 <i class="fa fa-chevron-up chev"></i></a>
                         </li>
-                        <div id="par">
-                            {% render_field bons.form.par_gt id='from' %}{% render_field bons.form.par_lt id='to' %}
+                        <div id="par" style="text-align: center;">
+{#                            {% render_field bons.form.par_gt id='from' %}{% render_field bons.form.par_lt id='to' %}#}
+                            {{ bons.form.par_gt }}-{{ bons.form.par_lt }}
                         </div>
                         <li><a href="#" class="toggle-menu" onclick="showcontent('#period')">Роки випуску
                             <i class="fa fa-chevron-up chev"></i></a></li>

@@ -6,10 +6,16 @@
 {% include  'catalogue/includes/header.html'%}
 
 {% block content %}
-    <img src="{{ bancnote.image.url }}"/>
-    <ul>
-        <li>{{ bancnote.par }}
-            {% if bancnote.par == 1 %}
+    <div class="row" style="padding-top: 5vh; padding-bottom: 5vh;">
+        <div class="col-lg-6 col-md-6 col-sm-5 col-xs-12" style="padding-right: 0; padding-left: 30px">
+            <div style="border-top: solid 1px #eaeaea; border-bottom: solid 1px #eaeaea; border-right: solid 1px #eaeaea; text-align: center">
+                <img style="width: 30vw; height: 30vw; margin: 25px;" src="{{ bancnote.image.url }}"/>
+            </div>
+        </div>
+    <div class="col-lg-4 col-md-4 col-sm-5 col-xs-12" style="padding-left: 0;">
+            <div style="border-top: solid 1px #eaeaea; border-right: solid 1px #eaeaea; margin-right: 9px;">
+                <div style="align-content: center; padding-top: 1vh; vertical-align: middle;">
+            <p class="bondet">Номінал: <br>{% if bancnote.par == 1 %}
                  {{ bancnote.type }}
             {% endif %}
             {% if bancnote.par == 2 and bancnote.type == 'Гривня' %}
@@ -27,17 +33,31 @@
             {% if bancnote.par > 4 and bancnote.type == 'Карбованець' %}
                 Карбованців
             {% endif %}
-        <li>{{ bancnote.desc | safe}}</li>
-        <li>{% if bancnote.year.upper|sub:bancnote.year.lower == 1 %}
+            </p>
+                <p class="bondet">Роки випуску: <br>{{ bancnote.year.lower }} - {{ bancnote.year.upper }}
+                {% if bancnote.year.upper|sub:bancnote.year.lower == 1 %}
                 {{ bancnote.year.lower }}
             {% endif %}
             {% if bancnote.year.upper|sub:bancnote.year.lower > 1 %}
                 {{ bancnote.year.lower }} - {{ bancnote.year.upper | sub:1 }}
-            {% endif %}</li>
-        <li>{{ bancnote.size }}</li>
-        {{ bancnote.sign | safe }}
-        <li>{{ bancnote.year.lower }} - {{ bancnote.year.upper }}</li>
-    </ul>
+            {% endif %}
+                </p>
+                <p class="bondet">Підписи: <br>{{ bancnote.sign | safe }}</p>
+                <p class="bondet">Розміри: <br>{{ bancnote.size }}</p>
+                    <p class="bondet">Опис: <br>{{ bancnote.desc | safe}}</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .bondet {
+            font-size: 24px;
+            border-bottom: 1px solid #eaeaea;
+            padding-left: 15px;
+            margin: 0;
+        }
+    </style>
 {% endblock %}
 
 {% include 'catalogue/includes/footer.html' %}
