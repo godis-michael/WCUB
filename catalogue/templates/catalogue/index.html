@@ -3,5 +3,10 @@
 {% load staticfiles %}
 
 {% block content %}
-
+    <style>
+        body {background-image: url({% static 'catalogue/img/bckg.jpg' %});
+              background-size: cover;
+              background-repeat: no-repeat;
+              background-position: center center;}
+    </style>
 {% endblock %}
