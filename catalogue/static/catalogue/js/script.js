@@ -27,14 +27,14 @@ $(document).ready(function () {
       } else $(this.lastChild).removeClass('fa-chevron-down').addClass('fa-chevron-up');
   });
 
-  var body = document.body,
-      html = document.documentElement,
-      height = Math.max( body.scrollHeight, body.offsetHeight,
-          html.clientHeight, html.scrollHeight, html.offsetHeight );
-  console.log(height);
-  if(height <= html.clientHeight){
-      $('footer').css('position', 'absolute');
-    } else $('footer').css('position', 'relative');
+  // var body = document.body,
+  //     html = document.documentElement,
+  //     height = Math.max( body.scrollHeight, body.offsetHeight,
+  //         html.clientHeight, html.scrollHeight, html.offsetHeight );
+  // console.log(height);
+  // if(height <= html.clientHeight){
+  //     $('footer').css('position', 'absolute');
+  //   } else $('footer').css('position', 'relative');
 
   $('#firstPer, #secPer').change(function () {
         var val1 = parseInt($('#firstPer').val()),

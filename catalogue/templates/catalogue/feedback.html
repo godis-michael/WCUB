@@ -17,32 +17,16 @@
         <div class="col-lg-5">
             <form method="post" id="recaptcha-form">
                 {% csrf_token %}
-{#                <script type="text/javascript">#}
-{#                    var recaptchaCallback = function(resp) {#}
-{#                        var form = document.getElementById("recaptcha-form");#}
-{#                        form.querySelectorAll('button').disabled = true;#}
-{#                        form.submit();#}
-{#                    };#}
-{#                </script>#}
                 {% render_field form.subject placeholder="Тема" %}
                 {% render_field form.from_email placeholder="E-mail" %}
                 {% render_field form.message placeholder="Повідомлення" cols="45" rows="6" style="resize: none; border: 1px solid #d6d6d6;border-radius: 3px;" %}
                 <br>
-{#                <button#}
-{#                    type="submit"#}
-{#                    style="background:#1d6e87; color: white; border: 0; width: 9vw; margin: 5px 8px; height: 7vh;"#}
-{#                    class="btn btn-default g-recaptcha"#}
-{#                    data-sitekey="6LefmiAUAAAAAFj-v5prF8Z0wXkqkijI-BZG_Zi5"#}
-{#                    data-callback="recaptchaCallback">#}
-{#                    Відправити#}
-{#                </button>#}
                 <button
                     style="background:#1d6e87; color: white; border: 0; width: 9vw; margin: 5px 8px; height: 7vh;"
                     class="btn btn-default">
                     Відправити
                 </button>
                 <div class="g-recaptcha" data-sitekey="6LedmiAUAAAAAKZLXLPjr_P65OCui0yYgIxyvErS"></div>
-{#                {% render_field form.captcha %}#}
                 <br> <br>
             </form>
         </div>

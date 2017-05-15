@@ -4,38 +4,77 @@
 
 {% block content %}
     <div class="row">
-        <div class="col-lg-4 col-lg-offset-2">
-            <h2>Ласкаво просимо на веб-каталог українських банкнот</h2>
-            <a href="{% url 'catalogue' %}" class="btn btn-default">Перейти до каталогу</a>
+        <div class="col-lg-5 col-md-5 col-sm-7  col-lg-offset-1 col-md-offset-1 col-sm-offset-1"
+             style="padding-top: 13%; text-align: center">
+            <div style="background: url({% static 'catalogue/img/1.png' %}) no-repeat;
+                    background-size: contain;
+                    background-position: center center;
+                    color: #777">
+                <br>
+                <h1 style="font-size: 60px">ВКУБ</h1>
+                <h3 style="font-weight: bold">Ласкаво просимо до веб-каталогу українських банкнот. Якщо Ви колекціонер,
+                    боніст або ж просто цікавитесь історією - Вам до нас!</h3>
+                <br>
+                <br>
+                <a href="{% url 'catalogue' %}" class="btn btn-default">Перейти до каталогу</a>
+                <br>
+            </div>
         </div>
-        <div class="col-lg-5">
-            <h2>Останні новини:</h2>
-            <div class="news-block">
-                <h4>Заголовок</h4>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto asperiores, doloremque earum enim
-                eum, excepturi illum laudantium minus molestiae, quam quis reiciendis similique unde veritatis
-                voluptates! Architecto debitis nesciunt ut.
-            </div>
-            <br>
-            <div class="news-block">
-                <h4>Заголовок</h4>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum id illum, modi odio quae repellat
-                temporibus! A accusantium delectus deleniti, magni minima, mollitia nemo non quam temporibus ullam
-                veniam, voluptate!
-            </div>
-            <br>
-            <div class="news-block">
-                <h4>Заголовок</h4>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam beatae doloremque earum id, iste
-                laborum, minima molestias nihil numquam officia possimus quam quisquam rerum sunt temporibus ut,
-                voluptas voluptatibus. Delectus.
+        <div class="col-lg-5 col-md-5 col-sm-4 col-lg-offset-1 col-md-offset-1">
+            <div class="news-container"
+                 style="margin-top: 7vh; margin-left: 7%; margin-right: 4%; color: rgba(245, 245, 245, 0.9);">
+                <h2 style="margin-bottom: 7%;">Останні новини:</h2>
+                <div class="news-block">
+                    <h4>Заголовок</h4>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto asperiores, doloremque earum
+                    enim
+                    eum, excepturi illum laudantium minus molestiae, quam quis reiciendis similique unde veritatis
+                    voluptates! Architecto debitis nesciunt ut.
+                </div>
+                <div class="news-block">
+                    <h4>Заголовок</h4>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum id illum, modi odio quae repellat
+                    temporibus! A accusantium delectus deleniti, magni minima, mollitia nemo non quam temporibus ullam
+                    veniam, voluptate!
+                </div>
+                <div class="news-block">
+                    <h4>Заголовок</h4>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam beatae doloremque earum id, iste
+                    laborum, minima molestias nihil numquam officia possimus quam quisquam rerum sunt temporibus ut,
+                    voluptas voluptatibus. Delectus.
+                </div>
+                <div class="news-block">
+                    <h4>Заголовок</h4>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam beatae doloremque earum id, iste
+                    laborum, minima molestias nihil numquam officia possimus quam quisquam rerum sunt temporibus ut,
+                    voluptas voluptatibus. Delectus.
+                </div>
+                <div class="news-block">
+                    <h4>Заголовок</h4>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam beatae doloremque earum id, iste
+                    laborum, minima molestias nihil numquam officia possimus quam quisquam rerum sunt temporibus ut,
+                    voluptas voluptatibus. Delectus.
+                </div>
+                <div style="text-align: center">
+                    <a href="#" class="news-more">
+                        <img src="{% static 'catalogue/img/show_more_news.png' %}" alt="Показати більше"
+                             style="height: 13%; width: 13%;">
+                    </a>
+                </div>
             </div>
         </div>
     </div>
+    </div>
     <style>
-        body {background-image: url({% static 'catalogue/img/bckg.jpg' %});
-              background-size: cover;
-              background-repeat: no-repeat;
-              background-position: center center;}
+        body {
+            background-image: url({% static 'catalogue/img/bckg.jpg' %});
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        .news-block {
+            margin-bottom: 2vh;
+        }
     </style>
 {% endblock %}
