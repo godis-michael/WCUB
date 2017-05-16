@@ -12,8 +12,8 @@
                 {% endif %}
                 <div class="col-sm-3 col-lg-3">
                     <div style="display: block; text-align: center; margin: 0 auto">
-                        <a href="{{ bon.id }}">
-                            <img src="{{ bon.image.url }}" class="bons" style="width: 50%; height: 50%"/>
+                        <a class="bon-name" href="{{ bon.id }}">
+                            <img class="bon-photo" src="{{ bon.image.url }}" style="width: 50%; height: 50%"/>
                             <h5>{{ bon.par }}
                                 {% if bon.par == 1 %}
                                      {{ bon.type }}

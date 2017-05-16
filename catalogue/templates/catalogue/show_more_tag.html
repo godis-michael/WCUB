@@ -1,8 +1,11 @@
 {% load i18n %}
 {% if querystring %}
     <div class="endless_container" style="text-align: center; margin-bottom: 10px">
-        <a style="background:#1d6e87; color: white; border: 0" class="btn btn-default endless_more{% if class_name %} {{ class_name }}{% endif %}" href="{{ path }}{{ querystring }}"
-            data-el-querystring-key="{{ querystring_key }}">{% if label %}{{ label|safe }}{% else %}{% trans "show more" %}{% endif %}</a>
+        <a style="background:#1d6e87; color: white; border: 0"
+           class="btn btn-default endless_more{% if class_name %} {{ class_name }}{% endif %}"
+           href="{{ path }}{{ querystring }}"
+           data-el-querystring-key="{{ querystring_key }}">
+            {% if label %}{{ label|safe }}{% else %}{% trans "show more" %}{% endif %}</a>
         <div class="endless_loading" style="display: none;">{{ loading|safe }}</div>
     </div>
 {% endif %}

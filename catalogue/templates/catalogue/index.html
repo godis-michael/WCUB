@@ -3,20 +3,18 @@
 {% load staticfiles %}
 
 {% block content %}
+
     <div class="row">
         <div class="col-lg-5 col-md-5 col-sm-7  col-lg-offset-1 col-md-offset-1 col-sm-offset-1"
              style="padding-top: 13%; text-align: center">
             <div style="background: url({% static 'catalogue/img/1.png' %}) no-repeat;
                     background-size: contain;
-                    background-position: center center;
-                    color: #777">
+                    color: #777;">
                 <br>
-                <h1 style="font-size: 60px">ВКУБ</h1>
+                <h1 style="font-size: 60px">WCUB</h1>
                 <h3 style="font-weight: bold">Ласкаво просимо до веб-каталогу українських банкнот. Якщо Ви колекціонер,
                     боніст або ж просто цікавитесь історією - Вам до нас!</h3>
-                <br>
-                <br>
-                <a href="{% url 'catalogue' %}" class="btn btn-default">Перейти до каталогу</a>
+                <a style="width: 220px;" href="{% url 'catalogue' %}" class="btn btn-sm animated-button thar-one">Перейти до каталогу</a>
                 <br>
             </div>
         </div>
@@ -67,10 +65,8 @@
     </div>
     <style>
         body {
-            background-image: url({% static 'catalogue/img/bckg.jpg' %});
+            background: url({% static 'catalogue/img/bckg.jpg' %}) center center no-repeat;
             background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center center;
         }
 
         .news-block {

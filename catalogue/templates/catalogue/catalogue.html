@@ -9,7 +9,7 @@
         <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
             <br> <br>
             <form method="get">
-                <div class="well bs-sidebar" id="style" style="background-color:#fff">
+                <div class="sidebar-filters" style="border: 1px solid #eaeaea; padding: 10px; border-radius: 3px;">
                     <ul class="nav nav-pills nav-stacked">
                         <li>
                             <a href="#" class="toggle-menu" onclick="showcontent('#money-type')">Тип купюри
@@ -18,10 +18,12 @@
                         <div id="money-type">
                             <ul class="nav nav-pills nav-stacked">
                                 {% for type in bons.form.type %}
-                                    <li><a href="#">
-                                        {{ type.tag }}
-                                        <label for="{{ type.id_for_label }}">{{ type.choice_label }}</label>
-                                    </a></li>
+                                    <li>
+                                        <a href="#" class="type-label" >
+                                            {{ type.tag }}
+                                            <label style="color: #000;" for="{{ type.id_for_label }}">{{ type.choice_label }}</label>
+                                        </a>
+                                    </li>
                                 {% endfor %}
                             </ul>
                         </div>
@@ -30,11 +32,12 @@
                                 <i class="fa fa-chevron-up chev"></i></a>
                         </li>
                         <div id="par" style="text-align: center;">
-{#                            {% render_field bons.form.par_gt id='from' %}{% render_field bons.form.par_lt id='to' %}#}
-                            {{ bons.form.par_gt }}-{{ bons.form.par_lt }}
+                            {{ bons.form.par_gt }}{{ bons.form.par_lt }}
                         </div>
-                        <li><a href="#" class="toggle-menu" onclick="showcontent('#period')">Роки випуску
-                            <i class="fa fa-chevron-up chev"></i></a></li>
+                        <li>
+                            <a href="#" class="toggle-menu" onclick="showcontent('#period')">Роки випуску
+                                <i class="fa fa-chevron-up chev"></i></a>
+                        </li>
                         <div id="period">
                             <div class="range-input">
                                 {% render_field bons.form.year maxlength='4' %}
@@ -44,10 +47,11 @@
                                 <input value="2017" min="1917" max="2017" step="1" type="range">
                             </div>
                         </div>
+                        <button type="submit" class="btn btn-sm animated-button thar-one"
+                                style="text-align: center; width: 100%; color: #777; background-color: transparent; text-transform: uppercase; font-size: 14px; font-weight: bold;">
+                            <i class="glyphicon glyphicon-search"></i> Search
+                        </button>
                     </ul>
-                    <button type="submit" class="btn btn-primary" style="text-align: center; width: 100%">
-                        <span class="glyphicon glyphicon-search"></span> Search
-                    </button>
                 </div>
             </form>
         </div>
@@ -61,4 +65,14 @@
         </div>
     </div>
 
+    <style>
+    a.toggle-menu{
+        color:#777;
+        font-weight: bold;
+        font-size: 15px;
+    }
+    a.toggle-menu:hover{
+        color: #000;
+    }
+    </style>
 {% endblock %}
