@@ -4,14 +4,11 @@ html {
 }
 
 body {
-    padding-bottom: 190px;
+    padding-bottom: 140px;
 }
 
 /*        my              */
-/** {
-  margin: 0;
-  padding: 0;
-}*/
+
 .subscribe {
     padding: 5px 8px;
     font-family: 'Georgia', Times, serif;
@@ -48,7 +45,7 @@ footer {
 
 .chev {
     position: absolute !important;
-    top: calc(1.2vh) !important;
+    top: 25% !important;
     right: calc(0.1vw) !important;
 }
 
@@ -65,34 +62,23 @@ h4 {
     text-transform: uppercase;
 }
 
-.contacts.fa {
-    color: #f84c48
-}
-
-.contacts.fa-envelope {
-    font-size: 11px;
-}
-
-#social-networks i {
-    width: 36px;
-    height: 36px;
-    color: #f84c48;
+i.fa.social{
+    width: 32px;
+    height: 32px;
+    color: #5f82a6;
     border: 1px solid #545454;
     border-radius: 50%;
-    padding: 7px;
-    font-size: 18px;
+    padding: 5px;
+    font-size: 16px;
     text-align: center;
-    padding-top: 8px;
-    padding-right: 7px;
+    padding-top: 7px;
+    padding-right: 6px;
 }
 
-#social-networks i:hover {
-    background-color: #d6d6d6;
+i.fa-envelope{
+    color: #5f82a6;
 }
 
-footer {
-    margin-top: 1vh;
-}
 .bon-name{
     color: #777;
 }
@@ -375,7 +361,7 @@ a.animated-button.thar-one {
     cursor: pointer;
     display: block;
     position: relative;
-    border: 2px solid #f84c48;
+    border: 2px solid #5f82a6;
     transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
 }
 
@@ -401,7 +387,7 @@ a.animated-button.thar-one:before {
     z-index: -1;
     content: '';
     color: #000 !important;
-    background: #ef4a46;
+    background: #5f82a6;
     transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
 }
 
@@ -410,7 +396,7 @@ button.animated-button.thar-one {
     cursor: pointer;
     display: block;
     position: relative;
-    border: 2px solid #f84c48;
+    border: 2px solid #5f82a6;
     transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
 }
 
@@ -436,7 +422,7 @@ button.animated-button.thar-one:before {
     z-index: -1;
     content: '';
     color: #000 !important;
-    background: #f84c48;
+    background: #5f82a6;
     transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
 }
 

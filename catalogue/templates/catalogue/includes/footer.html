@@ -3,57 +3,50 @@
 {% block footer %}
 
     <footer style="color: #777;">
-    <div class="navbar-static-bottom">
-        <div class="container-fluid">
-
-            <div class="row">
-                <div class="col-lg-1">
-                    <i style="color:#f84c48; margin-top: -10px" class="fa fa-envelope-o fa-5x"
-                       aria-hidden="true"></i>
-                </div>
-                <div class="col-lg-4 col-lg-offset-1">
-                    <p id="text-email">Отримуйте останні новини каталогу</p>
-                </div>
-                <div class="col-lg-6">
-                    <form action="{% url 'subscribe' %}" method="POST">
-                        {% csrf_token %}
-                        <div class="input-group input-group-lg">
-                            {% for field in subscribe_form.visible_fields %}
-                                {% render_field field placeholder="Введіть ваш E-Mail" class='subscribe form-control' %}
-                            {% endfor %}
-                            <span class="input-group-btn">
-                                    <button type="submit" style="background:#1d6e87; color: white; border: 0"
+        <div class="navbar-static-bottom">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-1">
+                        <i style="color:#5f82a6; margin-top: -10px" class="fa fa-envelope-o fa-5x"
+                           aria-hidden="true"></i>
+                    </div>
+                    <div class="col-lg-4 col-lg-offset-1">
+                        <p id="text-email">Отримуйте останні новини каталогу</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <form action="{% url 'subscribe' %}" method="POST">
+                            {% csrf_token %}
+                            <div class="input-group input-group-lg">
+                                {% for field in subscribe_form.visible_fields %}
+                                    {% render_field field placeholder="Введіть ваш E-Mail" class='subscribe form-control' %}
+                                {% endfor %}
+                                <span class="input-group-btn">
+                                    <button type="submit" style="background:#5f82a6; color: white; border: 0"
                                             class="btn btn-default">Підписатись</button>
                                 </span>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <hr style="margin: 10px 0; border-color: #d6d6d6">
-            <div class="row">
-                <div class="col-lg-4 col-md-4" style="text-align: center">
-                    <h4>Контакти</h4>
-                    <p>
-                        <i class="fa fa-envelope contacts"></i>
-                        WCUB@gmail.com
-                    </p>
-                </div>
-{#                <div class="col-lg-4 col-md-4" style="text-align: justify">#}
-{#                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur error quidem sit velit? A,#}
-{#                    ab, animi aut culpa ea eos ex illo itaque iure nisi officiis quasi quia soluta veritatis!#}
-{#                </div>#}
-                <div class="col-lg-4 col-md-4" style="text-align: center">
-                    <div id="social-networks">
-                        <h4>Соцмережі</h4>
-                        <a href="https://vk.com/" target="_blank"><i class="fa fa-vk"></i></a>
-                        <a href="https://facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
-                        <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>
-                        <a href="https://instagram.com/" target="_blank"><i class="fa fa-instagram"></i></a>
+                            </div>
+                        </form>
                     </div>
                 </div>
+                <hr style="margin: 10px 0; border-color: #d6d6d6">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6" style="text-align: center;">
+                        <i class="fa fa-envelope"></i>
+                        Email: ukrainian.bancnotes@gmail.com <span style="color: #5f82a6; font-weight: bold">|</span>
+                        Соцмережі
+                        <a href="https://vk.com/public147088992" target="_blank"><i class="fa social fa-vk"></i></a>
+                        <a href="https://facebook.com/" target="_blank"><i class="fa social fa-facebook"></i></a>
+                        <a href="https://twitter.com/" target="_blank"><i class="fa social fa-twitter"></i></a>
+                        <a href="https://instagram.com/" target="_blank"><i class="fa social fa-instagram"></i></a>
+                    </div>
+                </div>
+                <script type="text/javascript" src="//vk.com/js/api/openapi.js?146"></script>
+                <!-- VK Widget -->
+                <div id="vk_community_messages"></div>
+                <script type="text/javascript">
+                    VK.Widgets.CommunityMessages("vk_community_messages", 147088992, {tooltipButtonText: "Є питання?"});
+                </script>
             </div>
-
         </div>
-    </div>
     </footer>
 {% endblock %}

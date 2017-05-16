@@ -1,0 +1,9 @@
+<changelist name="Uncommitted_changes_before_Update_at_11_05_2017_1_26__Default_2" date="1494456411927" recycled="true" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_05_2017_1_26__Default_2/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 11.05.2017 1:26 [Default]" />
+  <binary>
+    <option name="BEFORE_PATH" value="catalogue/static/img/hrn.jpg" />
+    <option name="AFTER_PATH" value="catalogue/static/catalogue/img/hrn.jpg" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_05_2017_1_26__Default_/hrn.jpg" />
+  </binary>
+</changelist>
