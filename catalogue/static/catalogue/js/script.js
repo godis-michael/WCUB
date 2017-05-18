@@ -7,6 +7,9 @@ $(document).ready(function () {
                 $('#animated-feedback').append('<p class="animated zoomIn" style="margin-left: 2vw;">' + "Є ідеї або пропозиції щодо роботи порталу?" + '</p>');
                 setTimeout(function () {
                     $('#animated-feedback').append('<p class="animated fadeIn" style="margin-left: 3vw; margin-top: 20%;">' + "Напиши нам про це" + '</p>');
+                    $('#animated-feedback').append('<a href = "#feedback-section" ><i class = "fa fa-angle-double-down" style = "color: #5f82a6; font-size: 48px; margin-left: 50%;" ></i></a>'
+                    )
+                    ;
                 }, 1000);
             }, 1000);
         }, 1000);
