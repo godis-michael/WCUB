@@ -3,7 +3,7 @@ from django.contrib.postgres.validators import RangeMinValueValidator, RangeMaxV
 from django.core.validators import MinValueValidator, MaxValueValidator
 
 from django.db import models
-from datetime import datetime
+from datetime import datetime, timezone
 
 
 class Bancnote(models.Model):
@@ -35,3 +35,13 @@ class Subscriber(models.Model):
 
     def __str__(self):
         return self.email
+
+
+class Article(models.Model):
+    author = models.CharField(max_length=25, default='Адміністрація сайту')
+    title = models.CharField(max_length=200)
+    text = models.TextField()
+    published_date = models.DateTimeField(default=datetime.now())
+
+    def __str__(self):
+        return self.title

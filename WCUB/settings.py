@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+from liqpay.liqpay3 import LiqPay
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
@@ -35,12 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'catalogue.apps.CatalogueConfig',
     'widget_tweaks',
     'django_filters',
     'el_pagination',
     'captcha',
     'mathfilters',
+    'disqus',
 ]
 
 MIDDLEWARE = [
@@ -143,6 +147,8 @@ FIXTURE_DIRS = (
 )
 
 EL_PAGINATION_LOADING = """<img src="/static/catalogue/img/loading.gif" style="width: 50px; height: 50px"/>"""
+EL_PAGINATION_NEXT_LABEL = """<span>Наступна сторінка</span><i class="fa fa-angle-right" aria-hidden="true"></i>"""
+EL_PAGINATION_PREVIOUS_LABEL = """<i class="fa fa-angle-left" aria-hidden="true"></i><span>Попередня сторінка</span>"""
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # EMAIL_BACKEND = 'django_mailgun.MailgunBackend'
@@ -158,3 +164,8 @@ GOOGLE_RECAPTCHA_SECRET_KEY = '6LefmiAUAAAAAC44FUrNQ-mmZbAm75DOqTzbQ4_j'
 # RECAPTCHA_PUBLIC_KEY = '6LdIhiAUAAAAADlFnVeU_FkL2iKgbTtc_tFuohIi'
 # RECAPTCHA_PRIVATE_KEY = '6LdIhiAUAAAAACtRx8TM6ulxd2TaSSyQ3Limp6Ic'
 NOCAPTCHA = True
+
+DISQUS_API_KEY = 'jMes5PPtmfLkto9EO5vVTjp53xZBuvfTnhVaW9uhflmWetI6Gcb4XqP1TCrfoHc3'
+DISQUS_WEBSITE_SHORTNAME = 'wcub-1'
+
+SITE_ID = 1

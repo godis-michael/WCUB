@@ -7,11 +7,12 @@ from el_pagination.decorators import page_template
 from .decorators import check_recaptcha
 from .filters import BancnoteFilter
 from .forms import SubscriberForm, FeedbackForm
-from .models import Bancnote
+from .models import Bancnote, Article
 
 
 def index(request):
-    return render(request, 'catalogue/index.html')
+    news = Article.objects.all().order_by('-published_date')
+    return render(request, 'catalogue/index.html', {'news': news})
 
 
 @page_template('catalogue/includes/bon_list.html')  # just add this decorator
@@ -68,3 +69,4 @@ def subscribe_us(request):
     else:
         subscribe_form = SubscriberForm()
     return redirect(request.META['HTTP_REFERER'])
+

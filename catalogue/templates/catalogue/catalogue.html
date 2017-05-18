@@ -1,10 +1,10 @@
 {% extends 'catalogue/base.html' %}
 {% block title %}Каталог{% endblock %}
 
-{% load widget_tweaks %}
+{% load staticfiles widget_tweaks %}
 
 {% block content %}
-
+    <div class="container-fluid">
     <div class="row">
         <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
             <br> <br>
@@ -19,9 +19,10 @@
                             <ul class="nav nav-pills nav-stacked">
                                 {% for type in bons.form.type %}
                                     <li>
-                                        <a href="#" class="type-label" >
+                                        <a href="#" class="type-label">
                                             {{ type.tag }}
-                                            <label style="color: #000;" for="{{ type.id_for_label }}">{{ type.choice_label }}</label>
+                                            <label style="color: #000;"
+                                                   for="{{ type.id_for_label }}">{{ type.choice_label }}</label>
                                         </a>
                                     </li>
                                 {% endfor %}
@@ -64,15 +65,21 @@
             {% endblock %}
         </div>
     </div>
-
+    </div>
     <style>
-    a.toggle-menu{
-        color:#777;
-        font-weight: bold;
-        font-size: 15px;
-    }
-    a.toggle-menu:hover{
-        color: #000;
-    }
+        body {
+            background-image: url({% static 'catalogue/img/contact-img-blured.jpg' %});
+
+        }
+        a.toggle-menu {
+            color: #777;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        a.toggle-menu:hover {
+            color: #000;
+        }
     </style>
+
 {% endblock %}

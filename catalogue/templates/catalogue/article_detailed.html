@@ -1,0 +1,20 @@
+{% extends 'catalogue/base.html' %}
+{% block title %}{{ article.title }}{% endblock %}
+{% load disqus_tags %}
+
+{% block content %}
+    <div class="container">
+    <div class="row">
+    <div class="col-lg-10 col-lg-offset-1">
+        <h2>{{ article.title }}</h2>
+        {{ article.text | linebreaks }}
+        <br>
+        <p>{{ article.published_date }}</p>
+        <p>{{ article.author }}</p>
+        </div>
+    </div>
+    <div class="col-lg-10 col-lg-offset-1">
+        {% disqus_show_comments %}
+    </div>
+    </div>
+{% endblock %}
