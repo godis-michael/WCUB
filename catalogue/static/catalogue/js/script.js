@@ -1,4 +1,17 @@
 $(document).ready(function () {
+    setTimeout(function () {
+        $('#animated-feedback').append('<p class="animated zoomIn">' + "З'явилось запитання?" + '</p>');
+        setTimeout(function () {
+            $('#animated-feedback').append('<p class="animated zoomIn" style="margin-left: 1vw;">' + "Знайшли несправність на сайті?" + '</p>');
+            setTimeout(function () {
+                $('#animated-feedback').append('<p class="animated zoomIn" style="margin-left: 2vw;">' + "Є ідеї або пропозиції щодо роботи порталу?" + '</p>');
+                setTimeout(function () {
+                    $('#animated-feedback').append('<p class="animated fadeIn" style="margin-left: 3vw; margin-top: 20%;">' + "Напиши нам про це" + '</p>');
+                }, 1000);
+            }, 1000);
+        }, 1000);
+    }, 1000);
+
     var temp, denomination = [1, 2, 3, 5, 10, 20, 25, 50, 100, 200, 500, 1000, 2000, 5000, 10000, 20000,
         50000, 100000, 200000, 500000, 100000, 200000, 500000, 1000000, 2000000];
     for (var i = 0; i < denomination.length; i++) {
@@ -91,11 +104,11 @@ window.onload = function test() {
     }
 };
 /*         more slider      */
-  // var body = document.body,
-  //     html = document.documentElement,
-  //     height = Math.max( body.scrollHeight, body.offsetHeight,
-  //         html.clientHeight, html.scrollHeight, html.offsetHeight );
-  // console.log(height);
-  // if(height <= html.clientHeight){
-  //     $('footer').css('position', 'absolute');
-  //   } else $('footer').css('position', 'relative');
+// var body = document.body,
+//     html = document.documentElement,
+//     height = Math.max( body.scrollHeight, body.offsetHeight,
+//         html.clientHeight, html.scrollHeight, html.offsetHeight );
+// console.log(height);
+// if(height <= html.clientHeight){
+//     $('footer').css('position', 'absolute');
+//   } else $('footer').css('position', 'relative');

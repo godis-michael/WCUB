@@ -2,46 +2,70 @@
 {% block title %}Зворотній зв'язок{% endblock %}
 {% load staticfiles widget_tweaks %}
 {% block content %}
-    <div class="row">
-        <br>
-        <div class="col-lg-4" style="margin-top: 5%; text-align: right">
-            <p style="font-size: 18px">З'явилось запитання?</p>
-            <p style="font-size: 18px">Знайшли несправність на сайті?</p>
-            <p style="font-size: 18px">Є ідеї або пропозиції щодо роботи порталу?</p>
-            <p style="font-size: 42px">Напиши нам про це</p>
+    <section
+            style="height: 92vh; width: 100%; background: #c7c2c0; display: flex; flex-direction: row; padding-top: 25px;">
+        <a href="#feedback-section">
+            <img style="position: absolute; top: 45%; left: 47.1%;"
+                 src="{% static 'catalogue/img/scroll_down.png' %}" alt="">
+        </a>
+        <img src="{% static 'catalogue/img/hrn2.jpg' %}" style="margin: 25px 50px;">
+        <div id="animated-feedback" style="margin-top: 25px;">
         </div>
-        <div style="text-align: right; margin-top: 1%; " class="col-lg-3">
-            <img src="{% static 'catalogue/img/hrn.jpg' %}"
-                 alt="" style="border-radius: 50%">
-        </div>
-        <div class="col-lg-5">
-            <form method="post" id="recaptcha-form">
+    </section>
+    <section id="feedback-section">
+        <div class="feedback-form" style="margin-left: 40%; display: flex; justify-content: flex-start">
+            <form method="post" id="recaptcha-form" style="width: 0">
                 {% csrf_token %}
                 {% render_field form.subject placeholder="Тема" %}
                 {% render_field form.from_email placeholder="E-mail" %}
-                {% render_field form.message placeholder="Повідомлення" cols="45" rows="5" style="resize: none; border: 1px solid #d6d6d6;border-radius: 3px;" %}
-                <div style="width: 304px">
-                    <div style="padding-left: 7px;" class="g-recaptcha"
-                         data-sitekey="6LedmiAUAAAAAKZLXLPjr_P65OCui0yYgIxyvErS"></div>
-                </div>
-                <button style="background:#1d6e87; color: white; border: 0; width: 9vw; margin: 5px 8px; height: 7vh;"
+                {% render_field form.message placeholder="Повідомлення" cols="29" rows="5" style="resize: none; border: 1px solid #d6d6d6;border-radius: 3px;" %}
+                <div style="margin-left: 8px;" class="g-recaptcha"
+                     data-sitekey="6LedmiAUAAAAAKZLXLPjr_P65OCui0yYgIxyvErS"></div>
+                <button style="background:#5f82a6; color: white; border: 0; width: 9vw; margin: 5px 8px; height: 7vh;"
                         class="btn btn-default">
                     Відправити
                 </button>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A amet asperiores beatae ducimus error esse et fugiat harum laudantium, nulla perferendis provident quaerat qui quo recusandae similique tenetur vitae voluptatibus!</p>
             </form>
         </div>
-    </div>
+    </section>
+{% comment %}    <div class="container-fluid">
+        <div class="row" style="margin-top: 2%;">
+            <div class="col-lg-1 col-lg-offset-5">
+                <form method="post" id="recaptcha-form" style="width: 0">
+                    {% csrf_token %}
+                    {% render_field form.subject placeholder="Тема" %}
+                    {% render_field form.from_email placeholder="E-mail" %}
+                    {% render_field form.message placeholder="Повідомлення" cols="29" rows="5" style="resize: none; border: 1px solid #d6d6d6;border-radius: 3px;" %}
+                    <div class="g-recaptcha"
+                         data-sitekey="6LedmiAUAAAAAKZLXLPjr_P65OCui0yYgIxyvErS"></div>
+                    <button style="background:#5f82a6; color: white; border: 0; width: 9vw; margin: 5px 8px; height: 7vh;"
+                            class="btn btn-default">
+                        Відправити
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>{% endcomment %}
     <style>
         #id_subject, #id_from_email, #id_message {
             font-size: 18px;
-            padding: 5px 8px;
+            padding: 7px 10px;
             margin: 5px 8px;
         }
 
         #id_subject, #id_from_email {
             height: 42px;
-            width: 270px;
+            width: 300px;
+        }
+
+        .animated {
+            font-size: 24px;
+        }
+
+        .animated:last-of-type {
+            vertical-align: middle;
+            font-size: 48px;
         }
     </style>
-
 {% endblock %}

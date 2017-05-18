@@ -6,51 +6,49 @@
 {% include  'catalogue/includes/header.html' %}
 
 {% block content %}
-    <div class="containeer-fluid">
-        <div class="row"
-             style="padding-top: 5vh; padding-bottom: 0; margin-bottom: 5vh;border-bottom: 1px solid #eaeaea">
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding-right: 0; padding-left: 30px">
-                <div style="border-top: solid 1px #eaeaea; border-right: solid 1px #eaeaea; text-align: center">
-                    <img style="width: 35vw; height: 35vw; margin: 25px;" src="{{ bancnote.image.url }}"/>
-                </div>
+    <div class="container-fluid">
+    <div class="row"
+         style="margin-top: 5vh; padding-top: 0; padding-bottom: 0; margin-bottom: 5vh;border-bottom: 1px solid #eaeaea; border-top: 1px solid #eaeaea">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding-right: 0; padding-left: 30px">
+            <div style="border-right: solid 1px #eaeaea; text-align: center">
+                <img style="width: 35vw; height: 35vw; margin: 25px;" src="{{ bancnote.image.url }}"/>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-5 col-xs-12" style="padding-left: 0;">
-                <div style="border-top: solid 1px #eaeaea; border-right: solid 1px #eaeaea; margin-right: 9px;">
-                    <div style="align-content: center; padding-top: 1vh; vertical-align: middle;">
-                        <p class="bondet">Номінал: <br>{% if bancnote.par == 1 %}
-                            {{ bancnote.type }}
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding-left: 0;">
+            <div>
+                <div style="align-content: center; padding-top: 1vh; vertical-align: middle;">
+                    <p class="bondet">Номінал: <br>{% if bancnote.par == 1 %}
+                        {{ bancnote.type }}
+                    {% endif %}
+                        {% if bancnote.par == 2 and bancnote.type == 'Гривня' %}
+                            Гривні
                         {% endif %}
-                            {% if bancnote.par == 2 and bancnote.type == 'Гривня' %}
-                                Гривні
-                            {% endif %}
-                            {% if bancnote.par == 2 and bancnote.type == 'Карбованець' %}
-                                Карбованця
-                            {% endif %}
-                            {% if bancnote.par == 3 and bancnote.type == 'Карбованець' %}
-                                Карбованці
-                            {% endif %}
-                            {% if bancnote.par > 4 and bancnote.type == 'Гривня' %}
-                                Гривень
-                            {% endif %}
-                            {% if bancnote.par > 4 and bancnote.type == 'Карбованець' %}
-                                Карбованців
-                            {% endif %}
-                        </p>
-                        <p class="bondet">Роки випуску:<br>
-                            {% if bancnote.year.upper|sub:bancnote.year.lower == 1 %}
-                                {{ bancnote.year.lower }}
-                            {% endif %}
-                            {% if bancnote.year.upper|sub:bancnote.year.lower > 1 %}
-                                {{ bancnote.year.lower }} - {{ bancnote.year.upper | sub:1 }}
-                            {% endif %}
-                        </p>
-                        {% if bancnote.sign %}
+                        {% if bancnote.par == 2 and bancnote.type == 'Карбованець' %}
+                            Карбованця
+                        {% endif %}
+                        {% if bancnote.par == 3 and bancnote.type == 'Карбованець' %}
+                            Карбованці
+                        {% endif %}
+                        {% if bancnote.par > 4 and bancnote.type == 'Гривня' %}
+                            Гривень
+                        {% endif %}
+                        {% if bancnote.par > 4 and bancnote.type == 'Карбованець' %}
+                            Карбованців
+                        {% endif %}
+                    </p>
+                    <p class="bondet">Роки випуску: <br>
+                        {% if bancnote.year.upper|sub:bancnote.year.lower == 1 %}
+                            {{ bancnote.year.lower }}
+                        {% endif %}
+                        {% if bancnote.year.upper|sub:bancnote.year.lower > 1 %}
+                            {{ bancnote.year.lower }} - {{ bancnote.year.upper | sub:1 }}
+                        {% endif %}
+                    </p>
+                    {% if bancnote.sign %}
                             <p class="bondet">Підписи: <br>{{ bancnote.sign | safe }}</p>
-                        {% endif %}
-                        <p class="bondet">Розміри: <br>{{ bancnote.size }}</p>
-                        <p class="bondet">Опис: <br>{{ bancnote.desc | safe }}</p>
-
-                    </div>
+                    {% endif %}
+                    <p class="bondet">Розміри: <br>{{ bancnote.size }}</p>
+                    <p class="bondet">Опис: <br>{{ bancnote.desc | safe }}</p>
                 </div>
             </div>
         </div>
@@ -60,6 +58,7 @@
             </div>
         </div>
     </div>
+    </div>
     <style>
         .bondet {
             font-size: 20px;
@@ -67,8 +66,7 @@
             padding-left: 15px;
             margin: 0;
         }
-
-        .bondet:last-of-type {
+        .bondet:last-of-type{
             border: 0;
         }
 
@@ -76,7 +74,6 @@
             margin-left: 25px;
         }
     </style>
-
 {% endblock %}
 
 {% include 'catalogue/includes/footer.html' %}
