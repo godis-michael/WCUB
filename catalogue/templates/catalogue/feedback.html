@@ -25,28 +25,9 @@
                         class="btn btn-default">
                     Відправити
                 </button>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A amet asperiores beatae ducimus error esse et fugiat harum laudantium, nulla perferendis provident quaerat qui quo recusandae similique tenetur vitae voluptatibus!</p>
             </form>
         </div>
     </section>
-{% comment %}    <div class="container-fluid">
-        <div class="row" style="margin-top: 2%;">
-            <div class="col-lg-1 col-lg-offset-5">
-                <form method="post" id="recaptcha-form" style="width: 0">
-                    {% csrf_token %}
-                    {% render_field form.subject placeholder="Тема" %}
-                    {% render_field form.from_email placeholder="E-mail" %}
-                    {% render_field form.message placeholder="Повідомлення" cols="29" rows="5" style="resize: none; border: 1px solid #d6d6d6;border-radius: 3px;" %}
-                    <div class="g-recaptcha"
-                         data-sitekey="6LedmiAUAAAAAKZLXLPjr_P65OCui0yYgIxyvErS"></div>
-                    <button style="background:#5f82a6; color: white; border: 0; width: 9vw; margin: 5px 8px; height: 7vh;"
-                            class="btn btn-default">
-                        Відправити
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>{% endcomment %}
     <style>
         #id_subject, #id_from_email, #id_message {
             font-size: 18px;
