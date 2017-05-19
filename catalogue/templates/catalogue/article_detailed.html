@@ -1,20 +1,43 @@
 {% extends 'catalogue/base.html' %}
 {% block title %}{{ article.title }}{% endblock %}
-{% load disqus_tags %}
+{% load staticfiles disqus_tags %}
 
 {% block content %}
-    <div class="container">
-    <div class="row">
-    <div class="col-lg-10 col-lg-offset-1">
-        <h2>{{ article.title }}</h2>
-        {{ article.text | linebreaks }}
-        <br>
-        <p>{{ article.published_date }}</p>
-        <p>{{ article.author }}</p>
+    <div class="container" style="background-color: rgba(245, 245, 245, 0.6); margin-top: 0.7vh;">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1">
+                <h2 style="margin-top: 50px; margin-bottom: 20px;">{{ article.title }}</h2>
+                <div class="article-text">
+                    {{ article.text | linebreaks }}
+                </div>
+                <br>
+                <p class="article-sign">{{ article.published_date }}</p>
+                <p class="article-sign" style="margin-bottom: 30px">{{ article.author }}</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="navbar-static-bottom">
+                <div class="col-lg-10 col-lg-offset-1">
+                    {% disqus_show_comments %}
+                </div>
+            </div>
         </div>
     </div>
-    <div class="col-lg-10 col-lg-offset-1">
-        {% disqus_show_comments %}
-    </div>
-    </div>
+    <style>
+        body {
+            background: url({% static 'catalogue/img/contact-image.jpg' %}) center center no-repeat;
+            background-size: cover;
+        }
+        .article-sign {
+            font-size: 16px;
+            text-align: right;
+        }
+    .article-text {
+        font-size: 24px
+    }
+    .article-text > p {
+        margin-bottom: 0;
+    }
+    </style>
 {% endblock %}

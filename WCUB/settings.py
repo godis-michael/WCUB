@@ -146,8 +146,8 @@ FIXTURE_DIRS = (
 )
 
 EL_PAGINATION_LOADING = """<img src="/static/catalogue/img/loading.gif" style="width: 50px; height: 50px"/>"""
-EL_PAGINATION_NEXT_LABEL = """<span>Наступна сторінка</span><i class="fa fa-angle-right" aria-hidden="true"></i>"""
-EL_PAGINATION_PREVIOUS_LABEL = """<i class="fa fa-angle-left" aria-hidden="true"></i><span>Попередня сторінка</span>"""
+EL_PAGINATION_NEXT_LABEL = """<span>Попередні новини</span><i class="fa fa-angle-right" aria-hidden="true"></i>"""
+EL_PAGINATION_PREVIOUS_LABEL = """<i class="fa fa-angle-left" aria-hidden="true"></i><span>Останні новини</span>"""
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # EMAIL_BACKEND = 'django_mailgun.MailgunBackend'

@@ -1,6 +1,6 @@
 {% extends 'catalogue/base.html' %}
 
-{% load mathfilters disqus_tags %}
+{% load staticfiles mathfilters disqus_tags %}
 {% block title %}{{ bancnote.par }} {% endblock %}
 
 {% include  'catalogue/includes/header.html' %}
@@ -8,7 +8,7 @@
 {% block content %}
     <div class="container-fluid">
         <div class="row"
-             style="margin-top: 5vh; padding-top: 0; padding-bottom: 0; margin-bottom: 5vh;border-bottom: 1px solid #eaeaea; border-top: 1px solid #eaeaea">
+             style="margin-top: 5vh; padding-top: 0; padding-bottom: 0; margin-bottom: 5vh;border-bottom: 1px solid #eaeaea; border-top: 1px solid #eaeaea; background: url({% static 'catalogue/img/contact-img-blured.jpg' %}) center center no-repeat">
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding-right: 0; padding-left: 30px">
                 <div style="border-right: solid 1px #eaeaea; text-align: center">
                     <img id="zoom-7" style="width: 35vw; height: 35vw; margin: 25px;" src="{{ bancnote.image.url }}"/>
@@ -60,6 +60,9 @@
         </div>
     </div>
     <style>
+        body {
+            background-color: whitesmoke;
+        }
         .bondet {
             font-size: 20px;
             border-bottom: 1px solid #eaeaea;
