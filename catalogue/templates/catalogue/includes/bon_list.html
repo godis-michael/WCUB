@@ -1,51 +1,48 @@
 {% load el_pagination_tags edited_show_more mathfilters %}
 
 {% block bon_list %}
-
-        <div class="row">
-            {# filtering here #}
-            {% paginate 20 bons.qs as objects %}
-            {% for bon in objects %}
-                {% if forloop.counter0|divisibleby:"4" %}
-                    </div>
-                    <div class="row">
-                {% endif %}
-                <div class="col-sm-3 col-lg-3">
-                    <div style="display: block; text-align: center; margin: 0 auto; padding-bottom: 25px">
-                        <a class="bon-name" href="{{ bon.id }}">
-                            <img class="bon-photo" src="{{ bon.image.url }}" style="width: 245px; height: 238px"/>
-                            <p>{{ bon.par }}
-                                {% if bon.par == 1 %}
-                                     {{ bon.type }}
-                                {% endif %}
-                                {% if bon.par == 2 and bon.type == 'Гривня' %}
-                                    Гривні
-                                {% endif %}
-                                {% if bon.par == 2 and bon.type == 'Карбованець' %}
-                                    Карбованця
-                                {% endif %}
-                                {% if bon.par == 3 and bon.type == 'Карбованець' %}
-                                    Карбованці
-                                {% endif %}
-                                {% if bon.par > 4 and bon.type == 'Гривня' %}
-                                    Гривень
-                                {% endif %}
-                                {% if bon.par > 4 and bon.type == 'Карбованець' %}
-                                    Карбованців
-                                {% endif %}
-
-                                {% if bon.year.upper|sub:bon.year.lower == 1 %}
-                                    {{ bon.year.lower }}
-                                {% endif %}
-                                {% if bon.year.upper|sub:bon.year.lower > 1 %}
-                                    {{ bon.year.lower }} - {{ bon.year.upper | sub:1 }}
-                                {% endif %}
-                            </p>
-                        </a>
-                    </div>
+    <div class="row">
+        {# filtering here #}
+        {% paginate 20 bons.qs as objects %}
+        {% for bon in objects %}
+            {% if forloop.counter0|divisibleby:"4" %}
                 </div>
-            {% endfor %}
+                <div class="row">
+            {% endif %}
+            <div class="col-sm-3 col-lg-3">
+                <div class="bon-container">
+                    <a class="bon-name" href="{{ bon.id }}">
+                        <img class="bon-photo" src="{{ bon.image.url }}"/>
+                        <p>{{ bon.par }}
+                            {% if bon.par == 1 %}
+                                {{ bon.type }}
+                            {% endif %}
+                            {% if bon.par == 2 and bon.type == 'Гривня' %}
+                                Гривні
+                            {% endif %}
+                            {% if bon.par == 2 and bon.type == 'Карбованець' %}
+                                Карбованця
+                            {% endif %}
+                            {% if bon.par == 3 and bon.type == 'Карбованець' %}
+                                Карбованці
+                            {% endif %}
+                            {% if bon.par > 4 and bon.type == 'Гривня' %}
+                                Гривень
+                            {% endif %}
+                            {% if bon.par > 4 and bon.type == 'Карбованець' %}
+                                Карбованців
+                            {% endif %}
+                            {% if bon.year.upper|sub:bon.year.lower == 1 %}
+                                {{ bon.year.lower }}
+                            {% endif %}
+                            {% if bon.year.upper|sub:bon.year.lower > 1 %}
+                                {{ bon.year.lower }} - {{ bon.year.upper | sub:1 }}
+                            {% endif %}
+                        </p>
+                    </a>
+                </div>
             </div>
-         {% edited_show_more %}
+        {% endfor %}
         </div>
+    {% edited_show_more %}
 {% endblock %}

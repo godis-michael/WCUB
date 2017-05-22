@@ -5,81 +5,88 @@
 
 {% block content %}
     <div class="container-fluid">
-    <div class="row">
-        <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
-            <br> <br>
-            <form method="get" id="myform">
-                <div class="sidebar-filters" style="border: 1px solid #eaeaea; padding: 10px; border-radius: 3px;">
-                    <ul class="nav nav-pills nav-stacked">
-                        <li>
-                            <a href="#" class="toggle-menu" onclick="showcontent('#money-type')">Тип купюри
-                                <i class="fa fa-chevron-up chev"></i></a>
-                        </li>
-                        <div id="money-type">
-                            <ul class="nav nav-pills nav-stacked">
-                                {% for type in bons.form.type %}
-                                    <li>
-                                        <a href="#" class="type-label">
-                                            {{ type.tag }}
-                                            <label style="color: #000;"
-                                                   for="{{ type.id_for_label }}">{{ type.choice_label }}</label>
-                                        </a>
-                                    </li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                        <li>
-                            <a href="#" class="toggle-menu" onclick="showcontent('#par')">Номінал
-                                <i class="fa fa-chevron-up chev"></i></a>
-                        </li>
-                        <div id="par" style="text-align: center;">
-                            {{ bons.form.par_gt }}{{ bons.form.par_lt }}
-                        </div>
-                        <li>
-                            <a href="#" class="toggle-menu" onclick="showcontent('#period')">Роки випуску
-                                <i class="fa fa-chevron-up chev"></i></a>
-                        </li>
-                        <div id="period">
-                            <div class="range-input">
-                                {% render_field bons.form.year maxlength='4' %}
+        <div class="row">
+            <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
+                <br> <br>
+                <form method="get" id="myform">
+                    <div class="sidebar-filters">
+                        <ul class="nav nav-pills nav-stacked">
+                            <li>
+                                <a href="#" class="toggle-menu" onclick="showcontent('#money-type')">Тип купюри
+                                    <i class="fa fa-chevron-up chev"></i></a>
+                            </li>
+                            <div id="money-type">
+                                <ul class="nav nav-pills nav-stacked">
+                                    {% for type in bons.form.type %}
+                                        <li>
+                                            <a href="#" class="type-label">
+                                                {{ type.tag }}
+                                                <label for="{{ type.id_for_label }}">{{ type.choice_label }}</label>
+                                            </a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
                             </div>
-                            <div class="range-slider">
-                                <input value="1917" min="1917" max="2017" step="1" type="range">
-                                <input value="2017" min="1917" max="2017" step="1" type="range">
+                            <li>
+                                <a href="#" class="toggle-menu" onclick="showcontent('#par')">Номінал
+                                    <i class="fa fa-chevron-up chev"></i></a>
+                            </li>
+                            <div id="par" style="text-align: center;">
+                                {{ bons.form.par_gt }}{{ bons.form.par_lt }}
                             </div>
-                        </div>
-                        <button type="submit" class="btn btn-sm animated-button thar-one"
-                                style="text-align: center; width: 100%; color: #777; background-color: transparent; text-transform: uppercase; font-size: 14px; font-weight: bold;">
-                            <i class="glyphicon glyphicon-search"></i> Search
-                        </button>
-                    </ul>
+                            <li>
+                                <a href="#" class="toggle-menu" onclick="showcontent('#period')">Роки випуску
+                                    <i class="fa fa-chevron-up chev"></i></a>
+                            </li>
+                            <div id="period">
+                                <div class="range-input">
+                                    {% render_field bons.form.year maxlength='4' %}
+                                </div>
+                            </div>
+                            <button id="filter-button" type="submit" class="btn btn-sm animated-button thar-one filter-button">
+                                <i class="glyphicon glyphicon-search"></i> Search
+                            </button>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-10 col-md-9 col-sm-9 col-xs-12">
+                <br><br>
+                <div id="kill-filters-parent">
+                    <a id="kill-filters" href="{% url 'catalogue' %}"
+                    >Скинути фільтрацію <i class="fa fa-times-circle" style="font-size: 16px;"></i></a>
+                    <br> <br>
                 </div>
-            </form>
+                {% include page_template %}
+                {% block js %}
+                    {{ block.super }}
+                    <script>$.endlessPaginate();</script>
+                {% endblock %}
+            </div>
         </div>
-        <div class="col-lg-10 col-md-9 col-sm-9 col-xs-12 ">
-            <br><br>
-            {% include page_template %}
-            {% block js %}
-                {{ block.super }}
-                <script>$.endlessPaginate();</script>
-            {% endblock %}
-        </div>
-    </div>
     </div>
     <style>
         body {
             background-image: url({% static 'catalogue/img/contact-img-blured.jpg' %});
-
         }
-        a.toggle-menu {
-            color: rgba(46,48,51,.9);
+
+        #kill-filters {
+            display: inline-block;
+            border: 1px solid #eaeaea;
+            background: rgba(237, 237, 237, 0.8);
+            font-size: 15px !important;
+            padding: 5px 5px;
+            color: rgba(46, 48, 51, .9);
+            border-radius: 5px;
+            text-decoration: none;
             font-weight: bold;
-            font-size: 15px;
         }
 
-        a.toggle-menu:hover {
-            color: #000;
+        #kill-filters:hover {
+            background: rgba(200, 200, 195, 1);
+            border: 1px solid rgba(200, 200, 195, 1);
+            transition: background-color 0.6s linear;
         }
+
     </style>
-
 {% endblock %}

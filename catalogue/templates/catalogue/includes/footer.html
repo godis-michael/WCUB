@@ -2,13 +2,12 @@
 
 {% block footer %}
 
-    <footer style="color: rgba(46,48,51,.9);">
+    <footer>
         <div class="navbar-static-bottom">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-1">
-                        <i style="color:#5f82a6; margin-top: -10px" class="fa fa-envelope-o fa-5x"
-                           aria-hidden="true"></i>
+                        <i class="fa fa-envelope-o fa-5x" aria-hidden="true"></i>
                     </div>
                     <div class="col-lg-5" style="text-align: right">
                         <p id="text-email">Отримуйте останні новини каталогу</p>
@@ -21,8 +20,7 @@
                                     {% render_field field placeholder="Введіть ваш E-Mail" class='subscribe form-control' %}
                                 {% endfor %}
                                 <span class="input-group-btn">
-                                    <button type="submit" style="background:#5f82a6; color: white; border: 0"
-                                            class="btn btn-default">Підписатись</button>
+                                    <button id="subscribe-btn" type="submit" class="btn btn-default">Підписатись</button>
                                 </span>
                             </div>
                         </form>
@@ -46,6 +44,10 @@
                 <script type="text/javascript">
                     VK.Widgets.CommunityMessages("vk_community_messages", 147088992, {tooltipButtonText: ""});
                 </script>
+
+                <a href="#head-top">
+                    <i class="fa fa-angle-double-up scroll_up" style="display: none;"></i>
+                </a>
             </div>
         </div>
     </footer>

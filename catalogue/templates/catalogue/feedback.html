@@ -2,28 +2,21 @@
 {% block title %}Зворотній зв'язок{% endblock %}
 {% load staticfiles widget_tweaks %}
 {% block content %}
-    <section>
-        <div style="height: 92vh; width: 100%;
-                    background: url({% static 'catalogue/img/img-blured.jpg' %}) no-repeat;
-                    display: flex; flex-direction: row; justify-content: center; padding-top: 25px;">
-            <img src="{% static 'catalogue/img/hrn2.jpg' %}" style="margin: 25px 50px; border-radius: 50%; ">
-            <div id="animated-feedback" style="margin-top: 25px;">
-            </div>
+    <section id="first-sec" style="background: url({% static 'catalogue/img/img-blured.jpg' %}) no-repeat;">
+        <img id="feedback-img" src="{% static 'catalogue/img/hrn2.jpg' %}">
+        <div id="animated-feedback">
         </div>
     </section>
-    <section
-            id="feedback-section" {% comment %}style="background: url({% static 'catalogue/img/contact-image.jpg' %}) no-repeat"{% endcomment %}>
-        <div class="feedback-form"
-             style="margin-left: 40%; padding-top: 25px; padding-bottom: 25px; display: flex; justify-content: flex-start">
-            <form method="post" id="recaptcha-form" style="width: 0">
+    <section id="feedback-section">
+        <div class="feedback-form">
+            <form method="post" id="recaptcha-form">
                 {% csrf_token %}
                 {% render_field form.subject placeholder="Тема" %}
                 {% render_field form.from_email placeholder="E-mail" %}
-                {% render_field form.message placeholder="Повідомлення" cols="40" rows="6" style="resize: none; border: 1px solid #d6d6d6;border-radius: 3px;" %}
-                <div style="margin-left: 8px;" class="g-recaptcha"
+                {% render_field form.message placeholder="Повідомлення" cols="40" rows="6" %}
+                <div class="g-recaptcha"
                      data-sitekey="6LedmiAUAAAAAKZLXLPjr_P65OCui0yYgIxyvErS"></div>
-                <button style="background:#5f82a6; color: white; border: 0; width: 124px; margin: 5px 8px; height: 42px;"
-                        class="btn btn-default">
+                <button class="btn btn-default recaptcha-button">
                     Відправити
                 </button>
             </form>
@@ -32,26 +25,6 @@
     <style>
         body {
             background: url({% static 'catalogue/img/contact-image.jpg' %}) center center no-repeat;
-        }
-
-        #id_subject, #id_from_email, #id_message {
-            font-size: 18px;
-            padding: 7px 10px;
-            margin: 5px 8px;
-        }
-
-        #id_subject, #id_from_email {
-            height: 42px;
-            width: 300px;
-        }
-
-        .animated {
-            font-size: 24px;
-        }
-
-        .animated:last-of-type {
-            vertical-align: middle;
-            font-size: 48px;
         }
     </style>
 {% endblock %}

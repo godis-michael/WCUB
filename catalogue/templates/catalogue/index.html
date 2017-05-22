@@ -7,13 +7,11 @@
         <div class="row">
             <div class="col-lg-5 col-md-5 col-sm-7  col-lg-offset-1 col-md-offset-1 col-sm-offset-1"
                  style="padding-top: 13%; text-align: center">
-                <div style="background: url({% static 'catalogue/img/1.png' %}) no-repeat center center;
-                        background-size: contain;
-                        color: rgba(46,48,51,.9);
-                        padding-bottom: 4%">
+                <div id="dye" style="background: url({% static 'catalogue/img/1.png' %}) no-repeat center center;
+                        background-size: contain;">
                     <br>
-                    <h1 style="font-size: 60px">WCUB</h1>
-                    <h3 style="font-weight: bold">Ласкаво просимо до веб-каталогу українських банкнот.<br>Якщо Ви
+                    <h1 style="font-size: 60px;">WCUB</h1>
+                    <h3 style="font-weight: bold;">Ласкаво просимо до веб-каталогу українських банкнот.<br>Якщо Ви
                         колекціонер,
                         боніст або ж просто цікавитесь історією - Вам до нас!</h3>
                 </div>
@@ -21,8 +19,7 @@
                     до каталогу</a>
             </div>
             <div class="col-lg-5 col-md-5 col-sm-4 col-lg-offset-1 col-md-offset-1">
-                <div class="news-container"
-                     style="margin-top: 7vh; margin-left: 7%; margin-right: 4%; color: rgba(245, 245, 245, 0.9);">
+                <div class="news-container">
                     <h2 style="margin-bottom: 7%;">Наші оновлення:</h2>
                     {% paginate 5 news %}
                     {% for new in news %}
@@ -45,31 +42,6 @@
                             {{ pages.next }}
                         </div>
                     </div>
-                    <style>
-                        .nav-but > a {
-                            display: inline-block; /* Строчно-блочный элемент */
-                            padding: 6px 20px;
-                            text-decoration: none !important; /* Убираем подчёркивание у ссылки */
-                            cursor: pointer; /* Курсор в виде руки */
-                            background: #5f82a6; /* Фон для браузеров, не поддерживающих градиент */
-                            border-radius: 20px; /* Скругляем уголки */
-                            color: white; /* Цвет текста и ссылки */
-                            font-size: 17px;
-                        }
-
-                        .nav-but > a > i {
-                            color: white;
-                            font-size: 18px;
-                        }
-
-                        .nav-but-next > a > i {
-                            padding-left: 5px;
-                        }
-
-                        .nav-but-prev > a > i {
-                            padding-right: 5px;
-                        }
-                    </style>
                 </div>
             </div>
         </div>
@@ -78,10 +50,6 @@
         body {
             background: url({% static 'catalogue/img/bckg.jpg' %}) center center no-repeat;
             background-size: cover;
-        }
-
-        .news-block {
-            margin-bottom: 2vh;
         }
     </style>
 {% endblock %}

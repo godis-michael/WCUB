@@ -1,12 +1,12 @@
 $(document).ready(function () {
     setTimeout(function () {
-        $('#animated-feedback').append('<p class="animated zoomIn">' + "З'явилось запитання?" + '</p>');
+        $('#animated-feedback').append('<p class="animated rollIn">' + "З'явилось запитання?" + '</p>');
         setTimeout(function () {
-            $('#animated-feedback').append('<p class="animated zoomIn" style="margin-left: 1vw;">' + "Знайшли несправність на сайті?" + '</p>');
+            $('#animated-feedback').append('<p class="animated rollIn" style="margin-left: 1vw;">' + "Знайшли несправність на сайті?" + '</p>');
             setTimeout(function () {
-                $('#animated-feedback').append('<p class="animated zoomIn" style="margin-left: 2vw;">' + "Є ідеї або пропозиції щодо роботи порталу?" + '</p>');
+                $('#animated-feedback').append('<p class="animated rollIn" style="margin-left: 2vw;">' + "Є ідеї або пропозиції щодо роботи порталу?" + '</p>');
                 setTimeout(function () {
-                    $('#animated-feedback').append('<p class="animated fadeIn" style="margin-left: 3vw; margin-top: 20%;">' + "Напиши нам про це" + '</p>');
+                    $('#animated-feedback').append('<p class="animated fadeIn" style="margin-left: 3vw; margin-top: 13%;">' + "Напиши нам про це" + '</p>');
                     $('#animated-feedback').append('<a href = "#feedback-section" ><i class = "fa fa-angle-double-down" style = "color: #5f82a6; font-size: 48px; margin-left: 50%;" ></i></a>'
                     )
                     ;
@@ -16,7 +16,11 @@ $(document).ready(function () {
     }, 1000);
 
     var temp, denomination = [1, 2, 3, 5, 10, 20, 25, 50, 100, 200, 500, 1000, 2000, 5000, 10000, 20000,
-        50000, 100000, 200000, 500000, 100000, 200000, 500000, 1000000, 2000000];
+        50000, 100000, 200000, 500000, 100000, 200000, 500000, 1000000];
+
+    $('#id_year_0').attr('value', 1917);
+    $('#id_year_1').attr('value', 2017);
+
     for (var i = 0; i < denomination.length; i++) {
         temp = document.createElement('option');
         $(temp).attr('value', denomination[i]).html(denomination[i]);
@@ -29,11 +33,11 @@ $(document).ready(function () {
         $('#to').append(temp);
     }
 
-    $('#from, #to').change(function () {
-        if (parseInt($('#from').val()) > parseInt($('#to').val())) {
-            temp = $('#to').val();
-            $('#to').val($('#from').val());
-            $('#from').val(temp);
+    $('#id_year_0, #id_year_1').change(function () {
+        if (parseInt($('#id_year_0').val()) > parseInt($('#id_year_1').val())) {
+            temp = $('#id_year_1').val();
+            $('#id_year_1').val($('#id_year_0').val());
+            $('#id_year_0').val(temp);
         }
     });
 
@@ -43,31 +47,10 @@ $(document).ready(function () {
         } else $(this.lastChild).removeClass('fa-chevron-down').addClass('fa-chevron-up');
     });
 
-    $('#id_year_0, #id_year_1').change(function () {
-        var val1 = parseInt($('#id_year_0').val()),
-            val2 = parseInt($('#id_year_1').val()),
-            rs = $('.range-slider').children();
-        console.log("val1 = " + val1 + ", val2 = " + val2);
-        if (val1 > 2017) val1 = 2017;
-        if (val2 > 2017) val2 = 2017;
-        if (val1 < 1917) val1 = 1917;
-        if (val2 < 1917) val2 = 1917;
-        if (val1 > val2) {
-            var temp = val2;
-            val2 = val1;
-            val1 = temp;
-        } else if (val1 === val2) {
-            if (val1 === 2017) val1 -= 1;
-            else if (val1 === 1917) val2 += 1;
-            else val1 += 1;
-        }
-
-        $('#id_year_0').attr('value', val1);
-        $('#id_year_1').attr('value', val2);
-
-        rs[0].value = parseInt(val1);
-        rs[1].value = parseInt(val2);
-        test();
+    $("#zoom_07").elevateZoom({
+        zoomType: "lens",
+        lensShape: "round",
+        lensSize: 200
     });
 });
 
@@ -75,37 +58,12 @@ function showcontent(id) {
     $(id).slideToggle('fast');
 }
 
-/*        slider           */
-function getVals() {
-    // Get slider values
-    var parent = this.parentNode;
-    var slides = parent.getElementsByTagName("input");
-    var slide1 = parseFloat(slides[0].value);
-    var slide2 = parseFloat(slides[1].value);
-    // Neither slider will clip the other, so make sure we determine which is larger
-    if (slide1 > slide2) {
-        var tmp = slide2;
-        slide2 = slide1;
-        slide1 = tmp;
-    }
-    $('#id_year_0').attr('value', slide1);
-    $('#id_year_1').attr('value', slide2);
-}
+$(Window).scroll(function () {
+    if($(document).scrollTop() > 100){
+        $('.scroll_up').fadeIn('slow').css('opacity','1');
+    }else $('.scroll_up').fadeOut('slow');
+});
 
-window.onload = function test() {
-    // Initialize Sliders
-    var sliderSections = document.getElementsByClassName("range-slider");
-    for (var x = 0; x < sliderSections.length; x++) {
-        var sliders = sliderSections[x].getElementsByTagName("input");
-        for (var y = 0; y < sliders.length; y++) {
-            if (sliders[y].type === "range") {
-                sliders[y].oninput = getVals;
-                // Manually trigger event first time to display values
-                sliders[y].oninput();
-            }
-        }
-    }
-};
 /*         more slider      */
 // var body = document.body,
 //     html = document.documentElement,

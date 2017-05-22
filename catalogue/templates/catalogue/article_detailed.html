@@ -3,10 +3,10 @@
 {% load staticfiles disqus_tags %}
 
 {% block content %}
-    <div class="container" style="background-color: rgba(245, 245, 245, 0.6); margin-top: 0.7vh;">
+    <div class="container article-container">
         <div class="row">
             <div class="col-lg-10 col-lg-offset-1">
-                <h2 style="margin-top: 50px; margin-bottom: 20px;">{{ article.title }}</h2>
+                <h2 class="article-title">{{ article.title }}</h2>
                 <div class="article-text">
                     {{ article.text | linebreaks }}
                 </div>
@@ -29,15 +29,5 @@
             background: url({% static 'catalogue/img/contact-image.jpg' %}) center center no-repeat;
             background-size: cover;
         }
-        .article-sign {
-            font-size: 16px;
-            text-align: right;
-        }
-    .article-text {
-        font-size: 24px
-    }
-    .article-text > p {
-        margin-bottom: 0;
-    }
     </style>
 {% endblock %}
